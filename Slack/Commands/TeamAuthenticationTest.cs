@@ -38,13 +38,10 @@ namespace Slack.Commands
 
         public override void Execute(CommandContext context)
         {
-            //TODO: check this functionality.
             var item = context.Items[0];
-            var username = item["Username"];
-            var token = item["Token"];
             _message.Text = "Hello Slack from Sitecore!";
-            _message.Token = token;
-            _message.Username = username;
+            _message.Token = item["Token"];
+            _message.Username = item["Username"];
             _message.Channel = "general";
             _service.PublishMessage(_message);
         }
