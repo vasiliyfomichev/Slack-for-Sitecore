@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Sitecore.Events;
+using Sitecore.Pipelines.LoggedIn;
 using Sitecore.Publishing;
 using Slack.Contracts;
 using Slack.Models;
@@ -40,7 +41,7 @@ namespace Slack.Events
         public void OnLoggedIn(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishBeginEventGuid));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedInEventGuid));
             if (!channelConfigs.Any())
                 return;
 
@@ -58,7 +59,7 @@ namespace Slack.Events
         public void OnLoggedOut(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishEndEventGuid));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedOutEventGuid));
             if (!channelConfigs.Any())
                 return;
             var publisher = Event.ExtractParameter(args, 0) as Publisher;

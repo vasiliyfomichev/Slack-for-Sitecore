@@ -11,6 +11,10 @@ namespace Slack
         {
             public const string PublishEndEventGuid = "{}";
             public const string PublishBeginEventGuid = "{}";
+            public const string LoggedInEventGuid = "{}";
+            public const string LoggedOutEventGuid = "{}";
+            public const string UserCreatedEventGuid = "{}";
+            public const string UserDeletedEventGuid = "{}";
         }
     }
 }

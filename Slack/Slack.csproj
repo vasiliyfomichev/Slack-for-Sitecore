@@ -110,6 +110,7 @@
     <Compile Include="Contracts\ISlackChannelConfig.cs" />
     <Compile Include="Contracts\ISlackMessage.cs" />
     <Compile Include="Contracts\ISlackService.cs" />
+    <Compile Include="Events\Membership.cs" />
     <Compile Include="Events\Security.cs" />
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />
