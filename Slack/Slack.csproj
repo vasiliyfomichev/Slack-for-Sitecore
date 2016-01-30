@@ -136,6 +136,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Slack\Slack.config" />
     <None Include="Properties\PublishProfiles\Vasiliy Local.pubxml" />
+    <Content Include="sitecore\shell\Themes\Standard\Slack.zip" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

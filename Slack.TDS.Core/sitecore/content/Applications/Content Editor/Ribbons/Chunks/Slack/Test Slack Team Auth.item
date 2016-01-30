@@ -13,9 +13,9 @@ templatekey: Large Button
 field: {D47ED548-84D5-4622-9886-5CC164727507}
 name: Icon
 key: icon
-content-length: 28
+content-length: 21
 
-Applications/32x32/about.png
+Slack/32x32/slack.png
 ----field----
 field: {DBBF9EE3-C30E-4456-A81F-ED8C2E8DF91B}
 name: Click
@@ -27,9 +27,9 @@ slack:testTeamAuthentication
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 28
+content-length: 21
 
-Applications/32x32/about.png
+Slack/32x32/slack.png
 ----field----
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
@@ -176,22 +176,22 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: d5e865ff-6ae1-4f84-b7b7-7fa47baa401f
+revision: 6fccb2c7-cb0b-4fc8-8ce7-45a8610b0b42
 
 ----field----
 field: {4DF6DA21-E745-444C-956E-1D4A96AB8821}
 name: Header
 key: header
-content-length: 20
+content-length: 14
 
-Test Slack Team Auth
+Test Team Auth
 ----field----
 field: {A1A31A93-C4A0-4396-B629-67C33001A3CF}
 name: Tooltip
 key: tooltip
-content-length: 39
+content-length: 90
 
-Test team authentication configuration.
+Test team authentication configuration. A test message will be posted to #general channel.
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -219,14 +219,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d5e865ff-6ae1-4f84-b7b7-7fa47baa401f
+6fccb2c7-cb0b-4fc8-8ce7-45a8610b0b42
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T111448Z
+20160130T113751Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
