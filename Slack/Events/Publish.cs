@@ -87,6 +87,27 @@ namespace Slack.Events
             }
         }
 
+        public void OnPublishFail(object sender, EventArgs args)
+        {
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishEnd));
+            if (!publications.Any())
+                return;
+            var publisher = Sitecore.Events.Event.ExtractParameter(args, 0) as Publisher;
+            if (publisher == null) return;
+
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.ChannelItems)
+                {
+                    _message.Text = PopulatePublishMessage(publication, publisher, "failed");
+                    _message.Channel = channel.Channel_Name;
+                    //TODO: populate the rest of the message
+                    _service.PublishMessage(_message);
+                }
+            }
+        }
+
         private static string PopulatePublishMessage(Publication publication, Publisher publisher, string action)
         {
             using (new SecurityDisabler())
