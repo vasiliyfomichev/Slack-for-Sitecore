@@ -54,12 +54,13 @@ namespace Slack.Events
 
             foreach (var publication in publications)
             {
-                foreach (var channel in publication.ChannelItems)
+                foreach (var channel in publication.GetChannels())
                 {
                     _message.Text = PopulatePublishMessage(publication, publisher, "was initiated");
                     _message.Channel = channel.Channel_Name;
-                    _message.Token = publication.TeamContextItem.Token;
-                    _message.Username = publication.TeamContextItem.Username;
+                    var teamContext = publication.GetTeamContext();
+                    _message.Token = teamContext.Token;
+                    _message.Username = teamContext.Username;
                     _service.PublishMessage(_message);
                 }
             }
@@ -76,12 +77,13 @@ namespace Slack.Events
 
             foreach (var publication in publications)
             {
-                foreach (var channel in publication.ChannelItems)
+                foreach (var channel in publication.GetChannels())
                 {
                     _message.Text = PopulatePublishMessage(publication, publisher, "ended");
                     _message.Channel = channel.Channel_Name;
-                    _message.Token = publication.TeamContextItem.Token;
-                    _message.Username = publication.TeamContextItem.Username;
+                    var teamContext = publication.GetTeamContext();
+                    _message.Token = teamContext.Token;
+                    _message.Username = teamContext.Username;
                     _service.PublishMessage(_message);
                 }
             }
@@ -98,11 +100,13 @@ namespace Slack.Events
 
             foreach (var publication in publications)
             {
-                foreach (var channel in publication.ChannelItems)
+                foreach (var channel in publication.GetChannels())
                 {
                     _message.Text = PopulatePublishMessage(publication, publisher, "failed");
                     _message.Channel = channel.Channel_Name;
-                    //TODO: populate the rest of the message
+                    var teamContext = publication.GetTeamContext();
+                    _message.Token = teamContext.Token;
+                    _message.Username = teamContext.Username;
                     _service.PublishMessage(_message);
                 }
             }

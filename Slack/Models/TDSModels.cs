@@ -314,7 +314,7 @@ namespace Slack
 	/// <para>ID: dc193d8e-2850-4bd9-aba8-f4afe43cfe7e</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=Publication_Folder.TemplateIdString, AutoMap=true)]
-	public partial class Publication_Folder  : GlassBase, IPublication_Folder 
+	public partial class Publication_Folderxxx  : GlassBase, IPublication_Folder 
 	{
 	    
 		public const string TemplateIdString = "dc193d8e-2850-4bd9-aba8-f4afe43cfe7e";
@@ -488,7 +488,7 @@ namespace Slack
 	/// <para>ID: e8bd1697-9a84-4d18-91d1-4fc9f8594b6e</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=Publication.TemplateIdString, AutoMap=true)]
-	public partial class Publication  : GlassBase, IPublication 
+	public partial class Publicationxxx  : GlassBase, IPublication 
 	{
 	    
 		public const string TemplateIdString = "e8bd1697-9a84-4d18-91d1-4fc9f8594b6e";

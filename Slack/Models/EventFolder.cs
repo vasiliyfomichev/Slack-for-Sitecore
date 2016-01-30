@@ -3,12 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Glass.Mapper.Sc.Configuration.Attributes;
+using Sitecore.Data;
+using Sitecore.Data.Items;
 
 namespace Slack
 {
-    public partial class Event_Folder
+    public class Event_Folder
     {
-        [SitecoreChildren]
-        public virtual IEnumerable<Event> Events { get; set; }
+        #region Fields and Properties
+
+        public const string InstanceId = "89B26A3C-1C1A-47C4-895F-534DB019BE5F";
+        public const string TemplateIdString = "2BFC1077-8359-401F-84D4-5B34D3CF2889";
+        public const string TemplateNameStatic = "Event Folder";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+
+        public ID Id { get; set; }
+        public Item Item { get; set; }
+
+        #endregion
+
+        public Event_Folder(Item item)
+        {
+            Item = item;
+            Id = item.ID;
+        }
     }
+
 }

@@ -86,9 +86,5 @@ namespace Slack
         }
 
 
-        public struct Publication
-        {
-            public const string PublicationsFolder = "{4160247A-5A0A-45E1-9034-8C329FB4E78F}";
-        }
     }
 }

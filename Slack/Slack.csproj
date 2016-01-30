@@ -161,11 +161,10 @@
     <Compile Include="Events\Social.cs" />
     <Compile Include="Events\Security.cs" />
     <Compile Include="Events\Publish.cs" />
+    <Compile Include="Models\TeamContext.cs" />
     <Compile Include="Models\PublicationFolder.cs" />
     <Compile Include="Models\EventFolder.cs" />
-    <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
-    <Compile Include="Models\TDSModels.cs" />
     <Compile Include="Pipelines\TestStop.cs" />
     <Compile Include="Pipelines\TestStart.cs" />
     <Compile Include="Pipelines\PageTestStart.cs" />

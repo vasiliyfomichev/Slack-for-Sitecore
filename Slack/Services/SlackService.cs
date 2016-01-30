@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using Glass.Mapper.Sc;
+using Sitecore.Data;
 using Slack.Contracts;
 using Slack.Models;
 using SlackConnector;
@@ -29,9 +30,12 @@ namespace Slack.Services
 
         public IList<Publication> GetApplicablePublications(Guid eventId)
         {
-            var sitecoreContext = new SitecoreService("master");
-            var publicationFolder = sitecoreContext.GetItem<Publication_Folder>(Constants.Publication.PublicationsFolder);
-            return publicationFolder.Publications.Where(publication => publication.Events.Contains(eventId)).ToList();
+            var item = Sitecore.Data.Database.GetDatabase("master").GetItem(Publication_Folder.InstanceId);
+
+            var publicationFolder = new Publication_Folder(item);
+            var publications = publicationFolder.GetPublications();
+
+            return publications.Where(publication => publication.Events.Contains(ID.Parse(eventId))).ToList();
         }
         
     }
