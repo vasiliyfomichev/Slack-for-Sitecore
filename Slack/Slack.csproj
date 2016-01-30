@@ -120,6 +120,7 @@
     <Compile Include="Contracts\ISlackMessage.cs" />
     <Compile Include="Contracts\ISlackRepository.cs" />
     <Compile Include="Events\Publish.cs" />
+    <Compile Include="Models\SlackMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\SlackRepository.cs" />
   </ItemGroup>
