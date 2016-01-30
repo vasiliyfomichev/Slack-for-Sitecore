@@ -74,6 +74,10 @@
       <HintPath>..\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.Mvc">
+      <HintPath>..\lib\Sitecore.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.Social.Client.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Sitecore.Social.Client.Api.dll</HintPath>
@@ -124,6 +128,7 @@
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
+    <Compile Include="Pipelines\MvcException.cs" />
     <Compile Include="Pipelines\Shutdown.cs" />
     <Compile Include="Pipelines\Initialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
