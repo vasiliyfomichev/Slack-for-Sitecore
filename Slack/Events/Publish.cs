@@ -57,7 +57,7 @@ namespace Slack.Events
                 foreach (var channel in publication.GetChannels())
                 {
                     _message.Text = PopulatePublishMessage(publication, publisher, "was initiated");
-                    _message.Channel = channel.Channel_Name;
+                    _message.Channel = channel.ChannelName;
                     var teamContext = publication.GetTeamContext();
                     _message.Token = teamContext.Token;
                     _message.Username = teamContext.Username;
@@ -80,7 +80,7 @@ namespace Slack.Events
                 foreach (var channel in publication.GetChannels())
                 {
                     _message.Text = PopulatePublishMessage(publication, publisher, "ended");
-                    _message.Channel = channel.Channel_Name;
+                    _message.Channel = channel.ChannelName;
                     var teamContext = publication.GetTeamContext();
                     _message.Token = teamContext.Token;
                     _message.Username = teamContext.Username;
@@ -103,7 +103,7 @@ namespace Slack.Events
                 foreach (var channel in publication.GetChannels())
                 {
                     _message.Text = PopulatePublishMessage(publication, publisher, "failed");
-                    _message.Channel = channel.Channel_Name;
+                    _message.Channel = channel.ChannelName;
                     var teamContext = publication.GetTeamContext();
                     _message.Token = teamContext.Token;
                     _message.Username = teamContext.Username;

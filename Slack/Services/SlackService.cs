@@ -4,6 +4,7 @@ using System.Linq;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Slack.Contracts;
+using Slack.Models;
 using SlackConnector;
 using SlackConnector.Models;
 
@@ -38,7 +39,7 @@ namespace Slack.Services
 
         public IList<Publication> GetApplicablePublications(Guid eventId)
         {
-            var item = Database.GetDatabase(Settings.GetSetting("Slack.AuthoringDatabase", "master")).GetItem(Publication_Folder.InstanceId);
+            var item = Database.GetDatabase(Settings.GetSetting("Slack.AuthoringDatabase", "master")).GetItem(Constants.PublicationFolder.InstanceId);
 
             var publicationFolder = new Publication_Folder(item);
             var publications = publicationFolder.GetPublications();

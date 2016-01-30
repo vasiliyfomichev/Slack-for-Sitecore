@@ -14,8 +14,8 @@ namespace Slack.Commands
         {
             var item = context.Items[0];
             _message.Text = Settings.GetSetting("Slack.TestMessageText", "Hi there from Sitecore!");
-            _message.Token = item[TeamContext.TokenFieldId];
-            _message.Username = item[TeamContext.UsernameFieldId];
+            _message.Token = item[Constants.TeamContext.TokenFieldId];
+            _message.Username = item[Constants.TeamContext.UsernameFieldId];
             _message.Channel = Settings.GetSetting("Slack.TestMessageChannel", "general");
             _service.PublishMessage(_message);
         }
@@ -24,7 +24,7 @@ namespace Slack.Commands
         {
             var item = context.Items[0];
 
-            return item.TemplateName != TeamContext.TemplateNameStatic ? CommandState.Hidden : base.QueryState(context);
+            return item.TemplateName != Constants.TeamContext.TemplateNameStatic ? CommandState.Hidden : base.QueryState(context);
         }
 
         #endregion

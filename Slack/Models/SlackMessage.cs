@@ -8,12 +8,16 @@ namespace Slack.Models
 {
     public class SlackMessage : ISlackMessage
     {
+        #region Properties
+
         public string Token { get; set; }
         public string Channel { get; set; }
         public string Text { get; set; }
         public string Username { get; set; }
         public bool AsUser { get; set; }
         public string IconUrl { get; set; }
+
+        #endregion
 
         #region Methods
 
@@ -23,7 +27,7 @@ namespace Slack.Models
             if (teamContext == null)
                 return;
 
-            Channel = channel.Channel_Name;
+            Channel = channel.ChannelName;
             Token = teamContext.Token;
             Username = teamContext.Username;
         }

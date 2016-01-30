@@ -1,4 +1,6 @@
-﻿namespace Slack.Contracts
+﻿using Slack.Models;
+
+namespace Slack.Contracts
 {
     /// <summary>
     /// Message object to be posted to Slack Web API

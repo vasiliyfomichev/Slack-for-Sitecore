@@ -1,7 +1,63 @@
-﻿namespace Slack
+﻿using Sitecore.Data;
+
+namespace Slack
 {
     public class Constants
     {
+        #region Template Constants
+
+        public struct Channel
+        {
+            public const string TemplateIdString = "0127cf54-20a6-4df2-9a5d-95a84e209c22";
+            public const string TemplateNameStatic = "Channel";
+            public static readonly ID ChannelNameFieldId = new ID("e8dac703-95e6-4cac-85ec-efe4c9f6438c");
+            public static readonly ID DescriptionFieldId = new ID("668e7112-b7a9-4bed-93c2-9421aa77b5e8");
+        }
+
+        public struct Event
+        {
+            public const string TemplateIdString = "e8a6891d-ce13-4e9a-a002-d98fee6dec96";
+            public const string TemplateNameStatic = "Event";
+            public static readonly ID DescriptionFieldId = new ID("3c5a56da-ac04-48e2-b465-b0b6fc867caf");
+            public static readonly ID NameFieldId = new ID("f7ec9e45-42fd-4d18-a259-3b8013cf298b");
+        }
+
+        public struct EventFolder
+        {
+            public const string InstanceId = "89B26A3C-1C1A-47C4-895F-534DB019BE5F";
+            public const string TemplateIdString = "2BFC1077-8359-401F-84D4-5B34D3CF2889";
+            public const string TemplateNameStatic = "Event Folder";
+        }
+
+        public struct Publication
+        {
+            public static readonly ID DescriptionFieldId = new ID("9432b5e6-1ddb-41e7-b4d3-5fcf9b63f6bd");
+            public static readonly ID NameFieldId = new ID("ad560039-1bab-4136-bb25-597e5c706c39");
+            public static readonly ID ChannelsFieldId = new ID("99ab54d0-2d15-4654-84c4-3aa806e5dc7b");
+            public static readonly ID EventsFieldId = new ID("dbb566a8-2404-4fea-95d3-3ab7f91b3c49");
+            public static readonly ID MessageFieldId = new ID("013a8d98-6aa7-4bd9-80b4-4558ca34d563");
+            public static readonly ID TeamContextFieldId = new ID("4ec68282-940e-4996-8e5d-05ceae67f009");
+            public const string TemplateIdString = "e8bd1697-9a84-4d18-91d1-4fc9f8594b6e";
+            public const string TemplateNameStatic = "Publication";
+        }
+
+        public struct PublicationFolder
+        {
+            public const string InstanceId = "4160247a-5a0a-45e1-9034-8c329fb4e78f";
+            public const string TemplateIdString = "dc193d8e-2850-4bd9-aba8-f4afe43cfe7e";
+            public const string TemplateNameStatic = "Publication Folder";
+        }
+
+        public struct TeamContext
+        {
+            public const string TemplateIdString = "457d4151-335d-4828-921f-a7e1b0a722e1";
+            public const string TemplateNameStatic = "Team Context";
+            public static readonly ID TokenFieldId = new ID("9c06739f-1865-472b-9c65-60da4a83927a");
+            public static readonly ID UsernameFieldId = new ID("dd3dfde6-4199-4f94-a76e-14642f98c5de");
+        }
+
+        #endregion
+
         #region Nested Types
 
         /// <summary>
