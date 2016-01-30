@@ -144,6 +144,7 @@
     <Content Include="App_Config\Include\Slack\Slack.Pipelines.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\TeamAuthenticationTest.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Constants.cs" />
