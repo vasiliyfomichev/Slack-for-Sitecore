@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Sitecore.Analytics.Pipelines.RegisterPageEvent;
+using Sitecore.Analytics.Pipelines.TriggerCampaign;
+using Sitecore.ListManagement.ContentSearch.Pipelines;
+using Sitecore.Pipelines;
+using Slack.Contracts;
+using Slack.Models;
+using Slack.Services;
+
+namespace Slack.Pipelines
+{
+    public class ListCreation
+    {
+        #region Fields
+
+        private readonly ISlackMessage _message;
+        private readonly ISlackService _service;
+
+        #endregion
+
+        #region Constructors
+
+        public ListCreation()
+        {
+            _message = new SlackMessage();
+            _service = new SlackService();
+        }
+
+        public ListCreation(ISlackService service, ISlackMessage message)
+        {
+            _message = message;
+            _service = service;
+        }
+
+        #endregion
+
+        public void Process(ListArgs args)
+        {
+            if (args == null) return;
+            var channelConfigs =
+                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ListCreationEventId));
+            if (!channelConfigs.Any())
+                return;
+
+            foreach (var channelConfig in channelConfigs)
+            {
+                _message.Text = $"List {args.ContactList.Name} has been created.";
+                _message.Channel = channelConfig.ChannelName;
+                //TODO: populate the rest of the message
+                _service.PublishMessage(_message);
+            }
+        }
+    }
+}

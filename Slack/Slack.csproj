@@ -82,6 +82,14 @@
       <HintPath>..\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.ListManagement">
+      <HintPath>..\lib\Sitecore.ListManagement.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.ContentSearch">
+      <HintPath>..\lib\Sitecore.ListManagement.ContentSearch.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\lib\Sitecore.Mvc.dll</HintPath>
       <Private>False</Private>
@@ -136,6 +144,8 @@
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
+    <Compile Include="Pipelines\ListDeletion.cs" />
+    <Compile Include="Pipelines\ListCreation.cs" />
     <Compile Include="Pipelines\Campaign.cs" />
     <Compile Include="Pipelines\MvcException.cs" />
     <Compile Include="Pipelines\Event.cs" />
