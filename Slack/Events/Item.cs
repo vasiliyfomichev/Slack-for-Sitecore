@@ -43,7 +43,7 @@ namespace Slack.Events
         public void OnItemCreated(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedInEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemCreatedID));
             if (!channelConfigs.Any())
                 return;
 
@@ -61,7 +61,7 @@ namespace Slack.Events
         public void OnItemDeleted(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedOutEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemDeletedID));
             if (!channelConfigs.Any())
                 return;
             var item = Event.ExtractParameter(args, 0) as ItemDeletedEventArgs;
@@ -80,7 +80,7 @@ namespace Slack.Events
         public void OnItemMoved(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedOutEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemMovedID));
             if (!channelConfigs.Any())
                 return;
             var item = Event.ExtractParameter(args, 0) as ItemMovedEventArgs;

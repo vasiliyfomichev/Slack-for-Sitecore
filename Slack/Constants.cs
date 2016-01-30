@@ -17,7 +17,6 @@ namespace Slack
             public const string ItemCreatedID = "{9D997FF2-4A8F-4923-9256-9198540E692E}";
             public const string ItemDeletedID = "{10869EE4-663C-429E-B645-F7B0E2853008}";
             public const string ItemMovedID = "{62709B5D-EC90-4042-83E6-4B51C2546247}";
-            public const string ItemSavedID = "{CC11DB70-40CB-4980-8298-236C09FAE0FA}";
 
             public const string LoggedInEventId = "{94507A41-470E-4B50-BF20-5C6C6A3C577E}";
             public const string LoggedOutEventId = "{61E43D90-4289-4080-A4FF-344378839F28}";

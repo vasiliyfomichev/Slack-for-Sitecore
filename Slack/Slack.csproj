@@ -124,6 +124,8 @@
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
+    <Compile Include="Pipelines\Shutdown.cs" />
+    <Compile Include="Pipelines\Initialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SlackService.cs" />
     <Compile Include="Models\Channel.cs" />
@@ -131,9 +133,7 @@
     <Compile Include="Models\EventType.cs" />
     <Compile Include="Models\Publication.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pipelines\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="App_Config\Include\Slack\Slack.config" />
     <None Include="Properties\PublishProfiles\Vasiliy Local.pubxml" />
