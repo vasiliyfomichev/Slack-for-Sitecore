@@ -26,8 +26,15 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 7ae4bfab-cee5-4ef1-8236-28c19298139c
+revision: ab88b064-dece-4861-8e2b-bc6878d28bdd
 
+----field----
+field: {9541E67D-CE8C-4225-803D-33F7F29F09EF}
+name: __Short description
+key: __short description
+content-length: 47
+
+name of the Slack channel without the leading #
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7ae4bfab-cee5-4ef1-8236-28c19298139c
+ab88b064-dece-4861-8e2b-bc6878d28bdd
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T085859Z
+20160130T191156Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

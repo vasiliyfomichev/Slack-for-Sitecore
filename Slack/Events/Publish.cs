@@ -123,11 +123,15 @@ namespace Slack.Events
                 {
                     message = publication.Message + "\n";
                 }
+                var rootItem = publisher.Options.RootItem != null
+                    ? publisher.Options.RootItem.Paths.Path
+                    : "site publish";
                 message +=
                     $"{(publisher.Options.RepublishAll ? "Republish" : "Publish")} {action} to {string.Join(", ", publisher.Options.PublishingTargets.Select(i => database.GetItem(i).Paths.Path))} database: \n " +
                     $"User: {publisher.Options.UserName}\n" +
                     $"Mode: {publisher.Options.Mode} \n" +
-                    $"Root Item: {publisher.Options.RootItem.Paths.Path}\n" +
+                    
+                    $"Root Item: " + rootItem + "\n" +
                     $"Language: {publisher.Options.Language} \n" +
                     $"Publish Subitems: {publisher.Options.Deep} \n";
                 if (publisher.Options.Mode == PublishMode.SingleItem)
