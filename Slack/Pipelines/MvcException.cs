@@ -39,7 +39,7 @@ namespace Slack.Pipelines
         public void Process(ExceptionArgs args)
         {
             if (args == null) return;
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Pipelines.ApplicationShutdownEventId));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Pipelines.ApplicationMvcExceptionEventId));
             if (!publications.Any())
                 return;
             var message = $"MVC error occured on item {args.PageContext.Item.Paths.Path}. \n" +

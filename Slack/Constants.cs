@@ -40,11 +40,11 @@
         {
             public const string ApplicationInitializationEventId = "{80B4E1C1-6C99-47CD-860E-C7B4DD566B31}";
             public const string ApplicationShutdownEventId = "{5BCF735A-96DF-4BC2-84D9-3EE13B8ED822}";
-            public const string ApplicationMvcExceptionEventId = "";
+            public const string ApplicationMvcExceptionEventId = "{11C7E972-C963-4247-84ED-C1F381DEAE78}";
             public const string PageEventEventId = "{B9C3C15B-7627-461C-AB4F-4B876CB4D89B}";
             public const string CampaignTriggeredEventId = "{2E4D6E5F-CEBA-4649-B8E4-99337DC75C6D}";
-            public const string ListDeletionEventId = "";
-            public const string ListCreationEventId = "";
+            public const string ListDeletionEventId = "{8DD410DE-1E2D-4579-A3CF-CEBE6D05941D}";
+            public const string ListCreationEventId = "{FD11D6EC-4EA6-4E6C-8F94-6E847A1D8F95}";
             public const string PageTestStartedEventId = "";
             public const string TestStartedEventId = "";
             public const string TestStoppedEventId = "";
