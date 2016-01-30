@@ -1,40 +1,40 @@
 ----item----
 version: 1
-id: {0127CF54-20A6-4DF2-9A5D-95A84E209C22}
+id: {73ADA4FD-C36B-4C2F-8F75-502071753301}
 database: master
-path: /sitecore/templates/Slack/Channel
-parent: {796BCAAD-DA5C-4C11-BEAB-61BB0EF12542}
-name: Channel
+path: /sitecore/templates/Slack/Event/__Standard Values
+parent: {E8A6891D-CE13-4E9A-A002-D98FEE6DEC96}
+name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
-templatekey: Template
+template: {E8A6891D-CE13-4E9A-A002-D98FEE6DEC96}
+templatekey: Event
 
-----field----
-field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
-name: __Base template
-key: __base template
-content-length: 38
-
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}
-----field----
-field: {F7D48A55-2158-4F02-9356-756654404F73}
-name: __Standard values
-key: __standard values
-content-length: 38
-
-{9FE5678E-E822-49EF-8600-8FB29EF3DB42}
 ----version----
 language: en
 version: 1
-revision: 6b0e3900-05ae-434b-82c0-620957651303
+revision: 3b61538c-9300-4df5-adce-cc33c4002f07
 
+----field----
+field: {F7EC9E45-42FD-4D18-A259-3B8013CF298B}
+name: Name
+key: name
+content-length: 5
+
+$name
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160130T024320Z
+20160130T043124Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6b0e3900-05ae-434b-82c0-620957651303
+3b61538c-9300-4df5-adce-cc33c4002f07
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T043054Z
+20160130T043129Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

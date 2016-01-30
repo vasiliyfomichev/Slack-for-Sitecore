@@ -1,26 +1,40 @@
 ----item----
 version: 1
-id: {ED86C6AB-A45F-4539-B9DF-F47C18912039}
+id: {6C09C194-EB54-4A65-9751-7DB4F66954C5}
 database: master
-path: /sitecore/templates/Slack/Publication/Channel Description
+path: /sitecore/templates/Slack/Publication/__Standard Values
 parent: {E8BD1697-9A84-4D18-91D1-4FC9F8594B6E}
-name: Channel Description
+name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {E269FBB5-3750-427A-9149-7AA950B49301}
-templatekey: Template section
+template: {E8BD1697-9A84-4D18-91D1-4FC9F8594B6E}
+templatekey: Publication
 
 ----version----
 language: en
 version: 1
-revision: 3399b61c-ee27-4ad9-8402-3c4524611ab3
+revision: 6752cbb6-eb16-45ae-9e46-8bb1f60c61fa
 
+----field----
+field: {AD560039-1BAB-4136-BB25-597E5C706C39}
+name: Name
+key: name
+content-length: 5
+
+$name
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160130T025125Z
+20160130T043136Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -34,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3399b61c-ee27-4ad9-8402-3c4524611ab3
+6752cbb6-eb16-45ae-9e46-8bb1f60c61fa
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T034242Z
+20160130T043140Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
