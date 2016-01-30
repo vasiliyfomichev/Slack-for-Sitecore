@@ -37,7 +37,7 @@ namespace Slack.Pipelines
         public void Process(PipelineArgs args)
         {
             var channelConfigs =
-                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishFailedEventId));
+                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ApplicationShutdownEventId));
             if (!channelConfigs.Any())
                 return;
 

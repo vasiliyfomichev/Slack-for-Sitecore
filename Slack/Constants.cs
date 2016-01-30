@@ -34,6 +34,12 @@ namespace Slack
             public const string SocialUserLoggedInEventGuid = "{}";
         }
 
+        public struct Pipelines
+        {
+            public const string ApplicationInitializationEventId = "";
+            public const string ApplicationShutdownEventId = "";
+        }
+
         public struct Channel
         {
             public const string ID = "{0127CF54-20A6-4DF2-9A5D-95A84E209C22}";
