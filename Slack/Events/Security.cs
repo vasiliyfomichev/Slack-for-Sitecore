@@ -42,37 +42,42 @@ namespace Slack.Events
 
         public void OnLoggedIn(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.LoggedInEventId));
-            //if (!channelConfigs.Any())
-            //    return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnLoggedIn));
+            if (!publications.Any())
+                return;
 
-            //var publisher = Event.ExtractParameter(args, 0);
-            //if (publisher == null) return;
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var login = Sitecore.Events.Event.ExtractParameter(args, 0);
+            if (login == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = "On Logged In";
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnLoggedOut(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.LoggedOutEventId));
-            //if (!channelConfigs.Any())
-            //    return;
-            //var publisher = Event.ExtractParameter(args, 0) as Publisher;
-            //if (publisher == null) return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnLoggedOut));
+            if (!publications.Any())
+                return;
 
+            var login = Sitecore.Events.Event.ExtractParameter(args, 0);
+            if (login == null) return;
 
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = "On Logged Out";
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         #endregion

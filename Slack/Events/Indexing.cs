@@ -41,37 +41,42 @@ namespace Slack.Events
 
         public void OnIndexingStart(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.IndexingBeginID));
-            //if (!channelConfigs.Any())
-            //    return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnIndexingStart));
+            if (!publications.Any())
+                return;
 
-            //var indexer = Event.ExtractParameter(args, 0);
-            //if (indexer == null) return;
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var login = Sitecore.Events.Event.ExtractParameter(args, 0);
+            if (login == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = "Indexing Start";
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnIndexingEnd(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.IndexingEnd));
-            //if (!channelConfigs.Any())
-            //    return;
-            //var indexer = Event.ExtractParameter(args, 0);
-            //if (indexer == null) return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.IndexingEnd));
+            if (!publications.Any())
+                return;
 
+            var login = Sitecore.Events.Event.ExtractParameter(args, 0);
+            if (login == null) return;
 
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = "Indexing Finished";
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         #endregion
