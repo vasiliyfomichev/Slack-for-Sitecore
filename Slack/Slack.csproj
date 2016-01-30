@@ -78,6 +78,10 @@
       <HintPath>..\lib\Sitecore.Analytics.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.ContentTesting">
+      <HintPath>..\lib\Sitecore.ContentTesting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -144,6 +148,7 @@
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
+    <Compile Include="Pipelines\PageTestStart.cs" />
     <Compile Include="Pipelines\ListDeletion.cs" />
     <Compile Include="Pipelines\ListCreation.cs" />
     <Compile Include="Pipelines\Campaign.cs" />
