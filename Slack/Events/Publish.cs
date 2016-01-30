@@ -127,7 +127,7 @@ namespace Slack.Events
                     ? publisher.Options.RootItem.Paths.Path
                     : "site publish";
                 message +=
-                    $"{(publisher.Options.RepublishAll ? "Republish" : "Publish")} {action} to {string.Join(", ", publisher.Options.PublishingTargets.Select(i => database.GetItem(i).Paths.Path))} database: \n " +
+                    $"*{(publisher.Options.RepublishAll ? "Republish" : "Publish")}* {action} to *{string.Join(", ", publisher.Options.PublishingTargets.Select(i => database.GetItem(i).DisplayName))}* database: \n " +
                     $"User: {publisher.Options.UserName}\n" +
                     $"Mode: {publisher.Options.Mode} \n" +
                     
