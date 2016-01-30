@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {DE139E48-BCEF-4EFA-AAFE-F0D71D551BD4}
+database: master
+path: /sitecore/system/Modules/Slack/Publications/Membership Activity Occurred
+parent: {4160247A-5A0A-45E1-9034-8C329FB4E78F}
+name: Membership Activity Occurred
+master: {00000000-0000-0000-0000-000000000000}
+template: {E8BD1697-9A84-4D18-91D1-4FC9F8594B6E}
+templatekey: Publication
+
+----version----
+language: en
+version: 1
+revision: 9c2b3930-ddf0-4f6b-981d-dca5409cff89
+
+----field----
+field: {AD560039-1BAB-4136-BB25-597E5C706C39}
+name: Name
+key: name
+content-length: 28
+
+Membership Activity Occurred
+----field----
+field: {4EC68282-940E-4996-8E5D-05CEAE67F009}
+name: TeamContext
+key: teamcontext
+content-length: 38
+
+{0F383712-6973-46A2-8D15-65ECC6403D80}
+----field----
+field: {99AB54D0-2D15-4654-84C4-3AA806E5DC7B}
+name: Channels
+key: channels
+content-length: 38
+
+{DEA0A85A-5629-439D-9C59-E5C9F1868D45}
+----field----
+field: {DBB566A8-2404-4FEA-95D3-3AB7F91B3C49}
+name: Events
+key: events
+content-length: 155
+
+{4E813827-3501-454A-B2DB-D60A367DE236}|{5BE8F4B1-532A-44BD-BE6E-8EE22031DCFE}|{71A5B817-0C4D-4951-B52D-7095DA2D5004}|{588A694A-E929-4C93-8CE8-DC19E1810954}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160130T173628Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9c2b3930-ddf0-4f6b-981d-dca5409cff89
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160130T175306Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

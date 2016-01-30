@@ -14,6 +14,9 @@ namespace Slack.Services
 
         public void PublishMessage(ISlackMessage slackMessage)
         {
+            if (slackMessage.Token == null)
+                return;
+
             var slackConnector = new SlackConnector.SlackConnector();
             var connection = slackConnector.Connect(slackMessage.Token).Result;
             var message = new BotMessage

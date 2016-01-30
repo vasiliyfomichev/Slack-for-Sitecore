@@ -3,10 +3,8 @@
 using System;
 using System.Linq;
 using System.Web.Security;
-using Sitecore.Events;
 using Slack.Contracts;
 using Slack.Models;
-//using Slack.Models;
 using Slack.Services;
 
 #endregion
@@ -42,76 +40,120 @@ namespace Slack.Events
 
         public void OnUserCreated(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(Event.TemplateId.Guid);
-            //if (!channelConfigs.Any())
-            //    return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnUserCreated));
+            if (!publications.Any())
+                return;
 
-            //var user = Sitecore.Events.Event.ExtractParameter(args, 0) as MembershipUser;
-            //if (user == null) return;
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = $"User {user.UserName} was created.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var membershipUser = Sitecore.Events.Event.ExtractParameter(args, 0) as MembershipUser;
+            if (membershipUser == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = PopulateMembershipUserMessage(publication, membershipUser, "was initiated");
+                    _message.Channel = channel.Channel_Name;
+                    var teamContext = publication.GetTeamContext();
+                    if (teamContext == null)
+                        continue;
+                    _message.Token = teamContext.Token;
+                    _message.Username = teamContext.Username;
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnUserDeleted(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserDeletedEventGuid));
-            //if (!channelConfigs.Any())
-            //    return;
-            //var user = Event.ExtractParameter(args, 0) as MembershipUser;
-            //if (user == null) return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnUserDeleted));
+            if (!publications.Any())
+                return;
 
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = $"User {user.UserName} was deleted.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var membershipUser = Sitecore.Events.Event.ExtractParameter(args, 0) as MembershipUser;
+            if (membershipUser == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = PopulateMembershipUserMessage(publication, membershipUser, "was deleted");
+                    _message.Channel = channel.Channel_Name;
+                    var teamContext = publication.GetTeamContext();
+                    if (teamContext == null)
+                        continue;
+                    _message.Token = teamContext.Token;
+                    _message.Username = teamContext.Username;
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnRoleCreated(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserCreatedEventGuid));
-            //if (!channelConfigs.Any())
-            //    return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnRoleCreated));
+            if (!publications.Any())
+                return;
 
-            //var role = Event.ExtractParameter(args, 0) as string;
-            //if (role == null) return;
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = $"Role {role} was created.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var membershipRole = Sitecore.Events.Event.ExtractParameter(args, 0) as string;
+            if (membershipRole == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = $"Role {membershipRole} was created.";
+                    //TODO: populate the rest of the message
+                    _message.Channel = channel.Channel_Name;
+                    var teamContext = publication.GetTeamContext();
+                    if (teamContext == null)
+                        continue;
+                    _message.Token = teamContext.Token;
+                    _message.Username = teamContext.Username;
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnRoleDeleted(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserDeletedEventGuid));
-            //if (!channelConfigs.Any())
-            //    return;
-            //var role = Event.ExtractParameter(args, 0) as string;
-            //if (role == null) return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnRoleDeleted));
+            if (!publications.Any())
+                return;
 
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = $"Role {role} was deleted.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var membershipRole = Sitecore.Events.Event.ExtractParameter(args, 0) as string;
+            if (membershipRole == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = $"Role {membershipRole} was deleted.";
+                    //TODO: populate the rest of the message
+                    _message.Channel = channel.Channel_Name;
+                    var teamContext = publication.GetTeamContext();
+                    if (teamContext == null)
+                        continue;
+                    _message.Token = teamContext.Token;
+                    _message.Username = teamContext.Username;
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
+
+        private static string PopulateMembershipUserMessage(Publication publication, MembershipUser membershipUser, string action)
+        {
+            var message = "";
+            if (!string.IsNullOrEmpty(publication.Message))
+            {
+                message = publication.Message + "\n";
+            }
+            message +=
+                $"User {membershipUser.UserName} {action}\n" +
+                $"Email: {membershipUser.Email}\n";
+            return message;
+
+        }
         #endregion
     }
 }

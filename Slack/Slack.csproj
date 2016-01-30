@@ -152,7 +152,6 @@
     <Compile Include="Events\Social.cs" />
     <Compile Include="Events\Security.cs" />
     <Compile Include="Events\Publish.cs" />
-    <Compile Include="Models\TDSModels.cs" />
     <Compile Include="Models\TeamContext.cs" />
     <Compile Include="Models\PublicationFolder.cs" />
     <Compile Include="Models\EventFolder.cs" />

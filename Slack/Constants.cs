@@ -9,10 +9,8 @@ namespace Slack
     {
         public struct Events
         {
-            public const string UserCreatedEventGuid = "{}";
-            public const string UserDeletedEventGuid = "{}";
             public const string IndexingEndID = "{B96C1386-7A3F-4CBE-A710-6E3006380809}";
-            public const string IndexingBeginID = "{9C110525-9753-419C-99EC-D201AD6C5AD1}";
+            public const string OnIndexingStart = "{9C110525-9753-419C-99EC-D201AD6C5AD1}";
             public const string EventsFolder = "{89B26A3C-1C1A-47C4-895F-534DB019BE5F}";
 
             public const string ItemCreatedID = "{9D997FF2-4A8F-4923-9256-9198540E692E}";

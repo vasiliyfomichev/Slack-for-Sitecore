@@ -18,7 +18,7 @@
     <LegacyFileReplacement>false</LegacyFileReplacement>
     <Name>Slack.TDS.Master</Name>
     <RootNamespace>Slack.TDS.Master</RootNamespace>
-    <EnableCodeGeneration>True</EnableCodeGeneration>
+    <EnableCodeGeneration>False</EnableCodeGeneration>
     <ManageRoles>False</ManageRoles>
     <SitecoreDatabase>master</SitecoreDatabase>
     <AssemblyStatus>Exclude</AssemblyStatus>
@@ -128,6 +128,10 @@
     <SitecoreItem Include="sitecore\system\Modules\Slack\Publications.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\Slack\Publications\Membership Activity Occurred.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Slack\Publications\Publishing Activity Occurred.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -257,14 +261,6 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-  </ItemGroup>
-  <ItemGroup>
-    <CodeGenTemplate Include="Code Generation Templates\glassheader.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\glassitem.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\helpers.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\itempaths.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\mddocheader.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\mddocitem.tt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>

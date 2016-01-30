@@ -21,8 +21,8 @@ namespace Slack
 
         public TeamContext(Item item)
         {
-            Token = item.Fields[TokenFieldId].Value;
-            Username = item.Fields[UsernameFieldId].Value;
+            Token = item?.Fields[TokenFieldId]?.Value;
+            Username = item?.Fields[UsernameFieldId]?.Value;
         }
 
         #endregion
