@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Sitecore.Analytics.Pipelines.InsertRenderings;
+using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Shell.Framework.Commands;
 using Slack.Contracts;
@@ -39,10 +40,10 @@ namespace Slack.Commands
         public override void Execute(CommandContext context)
         {
             var item = context.Items[0];
-            _message.Text = "Hello Slack from Sitecore!";
-            _message.Token = item["Token"];
-            _message.Username = item["Username"];
-            _message.Channel = "general";
+            _message.Text = Settings.GetSetting("Slack.TestMessageText", "Hi there from Sitecore!");
+            _message.Token = item[TeamContext.TokenFieldId];
+            _message.Username = item[TeamContext.UsernameFieldId];
+            _message.Channel = Settings.GetSetting("Slack.TestMessageChannel", "general");
             _service.PublishMessage(_message);
         }
 
@@ -50,7 +51,7 @@ namespace Slack.Commands
         {
             var item = context.Items[0];
 
-            return item.TemplateName != "Team Authentication" ? CommandState.Hidden : base.QueryState(context);
+            return item.TemplateName != TeamContext.TemplateNameStatic ? CommandState.Hidden : base.QueryState(context);
         }
     }
 }
