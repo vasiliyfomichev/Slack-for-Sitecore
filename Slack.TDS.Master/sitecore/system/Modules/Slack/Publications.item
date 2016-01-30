@@ -6,8 +6,8 @@ path: /sitecore/system/Modules/Slack/Publications
 parent: {3E5594FC-0656-4F9A-B535-86DD9302845F}
 name: Publications
 master: {00000000-0000-0000-0000-000000000000}
-template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
-templatekey: Folder
+template: {DC193D8E-2850-4BD9-ABA8-F4AFE43CFE7E}
+templatekey: Publication Folder
 
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
@@ -19,7 +19,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: b4434985-21a9-4ef7-83a0-8c8158e1d259
+revision: 366a3c26-2b2c-42f9-9966-a9b7cd45edcc
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b4434985-21a9-4ef7-83a0-8c8158e1d259
+366a3c26-2b2c-42f9-9966-a9b7cd45edcc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T025513Z
+20160130T093236Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

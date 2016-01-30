@@ -38,20 +38,20 @@ namespace Slack.Pipelines
 
         public void Process(ExceptionArgs args)
         {
-            if (args == null) return;
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ApplicationMvcExceptionEventId));
-            if (!channelConfigs.Any())
-                return;
-            var message = $"MVC error occured on item {args.PageContext.Item.Paths.Path}. \n" +
-                          $"{args.Message} \n";
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = message;
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //if (args == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ApplicationMvcExceptionEventId));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var message = $"MVC error occured on item {args.PageContext.Item.Paths.Path}. \n" +
+            //              $"{args.Message} \n";
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = message;
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
     }
 }

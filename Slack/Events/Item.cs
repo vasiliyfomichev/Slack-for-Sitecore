@@ -42,58 +42,58 @@ namespace Slack.Events
 
         public void OnItemCreated(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemCreatedID));
-            if (!channelConfigs.Any())
-                return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemCreatedID));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            var item = Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;
-            if (item == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Item {item.Item.Paths.Path} was created.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var item = Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;
+            //if (item == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Item {item.Item.Paths.Path} was created.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnItemDeleted(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemDeletedID));
-            if (!channelConfigs.Any())
-                return;
-            var item = Event.ExtractParameter(args, 0) as ItemDeletedEventArgs;
-            if (item == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemDeletedID));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var item = Event.ExtractParameter(args, 0) as ItemDeletedEventArgs;
+            //if (item == null) return;
 
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Item {item.Item.Paths.Path} was deleted.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Item {item.Item.Paths.Path} was deleted.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnItemMoved(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemMovedID));
-            if (!channelConfigs.Any())
-                return;
-            var item = Event.ExtractParameter(args, 0) as ItemMovedEventArgs;
-            if (item == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemMovedID));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var item = Event.ExtractParameter(args, 0) as ItemMovedEventArgs;
+            //if (item == null) return;
 
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Item {item.Item.Paths.Path} was moved.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Item {item.Item.Paths.Path} was moved.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         #endregion

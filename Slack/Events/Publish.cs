@@ -1,21 +1,22 @@
-﻿#region
-
+﻿#region 
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
+using Sitecore;
 using Sitecore.Configuration;
-using Sitecore.Events;
 using Sitecore.Publishing;
 using Sitecore.SecurityModel;
 using Slack.Contracts;
 using Slack.Models;
-using Slack.Services;
-
+using Slack.Services; 
 #endregion
 
 namespace Slack.Events
 {
     public class Publish
     {
+
         #region Fields
 
         private readonly ISlackMessage _message;
@@ -25,10 +26,11 @@ namespace Slack.Events
 
         #region Constructors
 
+        //TODO: After the hackathon we should introduce Dependency Injection 
         public Publish()
         {
-            _message = new SlackMessage();
-            _service = new SlackService();
+           _message = new SlackMessage();
+            _service = new SlackService(); 
         }
 
         public Publish(ISlackService service, ISlackMessage message)
@@ -43,67 +45,60 @@ namespace Slack.Events
 
         public void OnPublishBegin(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishBeginEventID));
-            if (!channelConfigs.Any())
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishBegin));
+            if (!publications.Any())
                 return;
 
-            var publisher = Event.ExtractParameter(args, 0) as Publisher;
+            var publisher = Sitecore.Events.Event.ExtractParameter(args, 0) as Publisher;
             if (publisher == null) return;
-            foreach (var channelConfig in channelConfigs)
+
+            foreach (var publication in publications)
             {
-                _message.Text = PopulatePublishMessage(publisher, "was initiated");
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
+                foreach (var channel in publication.ChannelItems)
+                {
+                    _message.Text = PopulatePublishMessage(publication, publisher, "was initiated");
+                    _message.Channel = channel.Channel_Name;
+                    _message.Token = publication.TeamContextItem.Token;
+                    _message.Username = publication.TeamContextItem.Username;
+                    _service.PublishMessage(_message);
+                }
             }
         }
 
         public void OnPublishEnd(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishEndEventID));
-            if (!channelConfigs.Any())
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishEnd));
+            if (!publications.Any())
                 return;
-            var publisher = Event.ExtractParameter(args, 0) as Publisher;
+
+            var publisher = Sitecore.Events.Event.ExtractParameter(args, 0) as Publisher;
             if (publisher == null) return;
 
-
-            foreach (var channelConfig in channelConfigs)
+            foreach (var publication in publications)
             {
-                _message.Text = PopulatePublishMessage(publisher, "ended");
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
+                foreach (var channel in publication.ChannelItems)
+                {
+                    _message.Text = PopulatePublishMessage(publication, publisher, "ended");
+                    _message.Channel = channel.Channel_Name;
+                    _message.Token = publication.TeamContextItem.Token;
+                    _message.Username = publication.TeamContextItem.Username;
+                    _service.PublishMessage(_message);
+                }
             }
         }
 
-        public void OnPublishFail(object sender, EventArgs args)
-        {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishFailedEventId));
-            if (!channelConfigs.Any())
-                return;
-            var publisher = Event.ExtractParameter(args, 0) as Publisher;
-            if (publisher == null) return;
-
-
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = PopulatePublishMessage(publisher, "failed");
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
-        }
-
-        private static string PopulatePublishMessage(Publisher publisher, string action)
+        private static string PopulatePublishMessage(Publication publication, Publisher publisher, string action)
         {
             using (new SecurityDisabler())
             {
                 var database =
                     Factory.GetDatabase(Settings.GetSetting("Slack.AuthoringDatabase", "master"));
-                var message =
+                var message = "";
+                if (!string.IsNullOrEmpty(publication.Message))
+                {
+                    message = publication.Message + "\n";
+                }
+                message +=
                     $"{(publisher.Options.RepublishAll ? "Republish" : "Publish")} {action} to {string.Join(", ", publisher.Options.PublishingTargets.Select(i => database.GetItem(i).Paths.Path))} database: \n " +
                     $"User: {publisher.Options.UserName}\n" +
                     $"Mode: {publisher.Options.Mode} \n" +

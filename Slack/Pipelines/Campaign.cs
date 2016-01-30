@@ -38,19 +38,19 @@ namespace Slack.Pipelines
 
         public void Process(TriggerCampaignArgs args)
         {
-            if (args == null) return;
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.CampaignTriggeredEventId));
-            if (!channelConfigs.Any())
-                return;
+            //if (args == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.CampaignTriggeredEventId));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Campaign {args.PageEvent.Name} has been triggered.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Campaign {args.PageEvent.Name} has been triggered.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
     }
 }
