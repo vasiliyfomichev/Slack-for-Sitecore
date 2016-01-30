@@ -41,37 +41,37 @@ namespace Slack.Events
 
         public void OnPackageInstallStarted(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PackageInstallStartedEventGuid));
-            if (!channelConfigs.Any())
-                return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PackageInstallStartedEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            var package = Event.ExtractParameter(args, 0);
-            if (package == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = "A package install started.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var package = Event.ExtractParameter(args, 0);
+            //if (package == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = "A package install started.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnPackageInstallEnded(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PackageInstallStartedEventGuid));
-            if (!channelConfigs.Any())
-                return;
-            var publisher = Event.ExtractParameter(args, 0) as Publisher;
-            if (publisher == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = "A package install completed.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PackageInstallStartedEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var publisher = Event.ExtractParameter(args, 0) as Publisher;
+            //if (publisher == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = "A package install completed.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         #endregion

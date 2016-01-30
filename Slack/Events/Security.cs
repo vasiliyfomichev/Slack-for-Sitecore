@@ -42,37 +42,37 @@ namespace Slack.Events
 
         public void OnLoggedIn(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedInEventId));
-            if (!channelConfigs.Any())
-                return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedInEventId));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            var publisher = Event.ExtractParameter(args, 0);
-            if (publisher == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var publisher = Event.ExtractParameter(args, 0);
+            //if (publisher == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnLoggedOut(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedOutEventId));
-            if (!channelConfigs.Any())
-                return;
-            var publisher = Event.ExtractParameter(args, 0) as Publisher;
-            if (publisher == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedOutEventId));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var publisher = Event.ExtractParameter(args, 0) as Publisher;
+            //if (publisher == null) return;
 
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         #endregion

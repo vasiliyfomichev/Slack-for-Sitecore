@@ -41,37 +41,37 @@ namespace Slack.Events
 
         public void OnIndexingStart(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingBeginID));
-            if (!channelConfigs.Any())
-                return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingBeginID));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            var indexer = Event.ExtractParameter(args, 0);
-            if (indexer == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var indexer = Event.ExtractParameter(args, 0);
+            //if (indexer == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnIndexingEnd(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingEndID));
-            if (!channelConfigs.Any())
-                return;
-            var indexer = Event.ExtractParameter(args, 0);
-            if (indexer == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingEndID));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var indexer = Event.ExtractParameter(args, 0);
+            //if (indexer == null) return;
 
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         #endregion

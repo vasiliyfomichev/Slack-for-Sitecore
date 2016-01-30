@@ -11,6 +11,6 @@ namespace Slack.Contracts
     {
         void PublishMessage(ISlackMessage message);
 
-        IList<ISlackChannelConfig> GetApplicableSlackChannelConfigs(Guid eventId);
+        IList<Publication> GetApplicablePublications(Guid eventId);
     }
 }

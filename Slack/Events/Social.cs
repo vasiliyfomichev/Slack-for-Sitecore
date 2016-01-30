@@ -43,59 +43,59 @@ namespace Slack.Events
 
         public void OnUserCreated(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialUserCreatedEventGuid));
-            if (!channelConfigs.Any())
-                return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialUserCreatedEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            var user = Event.ExtractParameter(args, 0) as User;
-            if (user == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Social account {user.LocalName} has been created.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var user = Event.ExtractParameter(args, 0) as User;
+            //if (user == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Social account {user.LocalName} has been created.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnUserLoggedIn(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialUserLoggedInEventGuid));
-            if (!channelConfigs.Any())
-                return;
-            var loggedInEvent = Event.ExtractParameter(args, 0) as SocialNetworkUserLoggedInEventArgs;
-            if (loggedInEvent == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialUserLoggedInEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var loggedInEvent = Event.ExtractParameter(args, 0) as SocialNetworkUserLoggedInEventArgs;
+            //if (loggedInEvent == null) return;
 
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Social {loggedInEvent.NetworkName} account {loggedInEvent.UserName} has logged in.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Social {loggedInEvent.NetworkName} account {loggedInEvent.UserName} has logged in.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnUserProfileAttached(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialProfileAttachedEventGuid));
-            if (!channelConfigs.Any())
-                return;
-            var profileAttachedEvent = Event.ExtractParameter(args, 0) as SocialProfileAttachedEventArgs;
-            if (profileAttachedEvent == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialProfileAttachedEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var profileAttachedEvent = Event.ExtractParameter(args, 0) as SocialProfileAttachedEventArgs;
+            //if (profileAttachedEvent == null) return;
 
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text =
-                    $"Social {profileAttachedEvent.NetworkName} account {profileAttachedEvent.UserName} has been attached to profile.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text =
+            //        $"Social {profileAttachedEvent.NetworkName} account {profileAttachedEvent.UserName} has been attached to profile.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         #endregion

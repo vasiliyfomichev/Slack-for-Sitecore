@@ -38,19 +38,19 @@ namespace Slack.Pipelines
 
         public void Process(StartPageTestArgs args)
         {
-            if (args == null) return;
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.PageTestStartedEventId));
-            if (!channelConfigs.Any())
-                return;
+            //if (args == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.PageTestStartedEventId));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Content test started for {args.HostItem.Paths.Path}.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Content test started for {args.HostItem.Paths.Path}.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
     }
 }

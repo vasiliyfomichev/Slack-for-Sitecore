@@ -1,23 +1,37 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Glass.Mapper.Sc;
 using Slack.Contracts;
-
-#endregion
+using Slack.Models;
+using SlackConnector;
+using SlackConnector.Models;
 
 namespace Slack.Services
 {
     internal class SlackService : ISlackService
     {
-        public void PublishMessage(ISlackMessage message)
+        public void PublishMessage(ISlackMessage slackMessage)
         {
-            throw new NotImplementedException();
+            var slackConnector = new SlackConnector.SlackConnector();
+            var connection = slackConnector.Connect(slackMessage.Token).Result;
+            var message = new BotMessage
+            {
+                Text = slackMessage.Text,
+                ChatHub = connection.ConnectedChannels().First(x => x.Name.Equals("#" + slackMessage.Channel, StringComparison.InvariantCultureIgnoreCase))
+            };
+
+            // when
+            connection.Say(message).Wait();
         }
 
-        public IList<ISlackChannelConfig> GetApplicableSlackChannelConfigs(Guid eventId)
+        public IList<Publication> GetApplicablePublications(Guid eventId)
         {
-            throw new NotImplementedException();
+            var sitecoreContext = new SitecoreContext();
+            var publicationFolder = sitecoreContext.GetItem<Publication_Folder>(Constants.Publication.PublicationsFolder);
+            return publicationFolder.Publications.Where(publication => publication.Events.Contains(eventId)).ToList();
         }
+        
     }
 }

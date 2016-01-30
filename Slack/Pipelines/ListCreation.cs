@@ -38,19 +38,19 @@ namespace Slack.Pipelines
 
         public void Process(ListArgs args)
         {
-            if (args == null) return;
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ListCreationEventId));
-            if (!channelConfigs.Any())
-                return;
+            //if (args == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ListCreationEventId));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"List {args.ContactList.Name} has been created.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"List {args.ContactList.Name} has been created.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Security;
 using Sitecore.Events;
 using Slack.Contracts;
 using Slack.Models;
+//using Slack.Models;
 using Slack.Services;
 
 #endregion
@@ -41,74 +42,74 @@ namespace Slack.Events
 
         public void OnUserCreated(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserCreatedEventGuid));
-            if (!channelConfigs.Any())
-                return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(Event.TemplateId.Guid);
+            //if (!channelConfigs.Any())
+            //    return;
 
-            var user = Event.ExtractParameter(args, 0) as MembershipUser;
-            if (user == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"User {user.UserName} was created.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var user = Sitecore.Events.Event.ExtractParameter(args, 0) as MembershipUser;
+            //if (user == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"User {user.UserName} was created.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnUserDeleted(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserDeletedEventGuid));
-            if (!channelConfigs.Any())
-                return;
-            var user = Event.ExtractParameter(args, 0) as MembershipUser;
-            if (user == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserDeletedEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var user = Event.ExtractParameter(args, 0) as MembershipUser;
+            //if (user == null) return;
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"User {user.UserName} was deleted.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"User {user.UserName} was deleted.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnRoleCreated(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserCreatedEventGuid));
-            if (!channelConfigs.Any())
-                return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserCreatedEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
 
-            var role = Event.ExtractParameter(args, 0) as string;
-            if (role == null) return;
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Role {role} was created.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //var role = Event.ExtractParameter(args, 0) as string;
+            //if (role == null) return;
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Role {role} was created.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         public void OnRoleDeleted(object sender, EventArgs args)
         {
-            var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserDeletedEventGuid));
-            if (!channelConfigs.Any())
-                return;
-            var role = Event.ExtractParameter(args, 0) as string;
-            if (role == null) return;
+            //var channelConfigs =
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.UserDeletedEventGuid));
+            //if (!channelConfigs.Any())
+            //    return;
+            //var role = Event.ExtractParameter(args, 0) as string;
+            //if (role == null) return;
 
-            foreach (var channelConfig in channelConfigs)
-            {
-                _message.Text = $"Role {role} was deleted.";
-                _message.Channel = channelConfig.ChannelName;
-                //TODO: populate the rest of the message
-                _service.PublishMessage(_message);
-            }
+            //foreach (var channelConfig in channelConfigs)
+            //{
+            //    _message.Text = $"Role {role} was deleted.";
+            //    _message.Channel = channelConfig.ChannelName;
+            //    //TODO: populate the rest of the message
+            //    _service.PublishMessage(_message);
+            //}
         }
 
         #endregion
