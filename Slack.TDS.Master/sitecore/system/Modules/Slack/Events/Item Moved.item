@@ -1,0 +1,11 @@
+----item----
+version: 1
+id: {C79152B0-D6D4-4A34-94C0-5C6325F63580}
+database: master
+path: /sitecore/system/Modules/Slack/Events/Item Moved
+parent: {89B26A3C-1C1A-47C4-895F-534DB019BE5F}
+name: Item Moved
+master: {00000000-0000-0000-0000-000000000000}
+template: {E8A6891D-CE13-4E9A-A002-D98FEE6DEC96}
+templatekey: Event
+
