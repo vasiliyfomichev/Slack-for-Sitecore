@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Sitecore.Analytics.Pipelines.InsertRenderings;
-using Sitecore.Configuration;
-using Sitecore.Data;
+﻿using Sitecore.Configuration;
 using Sitecore.Shell.Framework.Commands;
 using Slack.Contracts;
 using Slack.Models;
@@ -14,6 +8,27 @@ namespace Slack.Commands
 {
     public class TeamAuthenticationTest : Command
     {
+        #region Methods
+
+        public override void Execute(CommandContext context)
+        {
+            var item = context.Items[0];
+            _message.Text = Settings.GetSetting("Slack.TestMessageText", "Hi there from Sitecore!");
+            _message.Token = item[TeamContext.TokenFieldId];
+            _message.Username = item[TeamContext.UsernameFieldId];
+            _message.Channel = Settings.GetSetting("Slack.TestMessageChannel", "general");
+            _service.PublishMessage(_message);
+        }
+
+        public override CommandState QueryState(CommandContext context)
+        {
+            var item = context.Items[0];
+
+            return item.TemplateName != TeamContext.TemplateNameStatic ? CommandState.Hidden : base.QueryState(context);
+        }
+
+        #endregion
+
         #region Fields
 
         private readonly ISlackMessage _message;
@@ -36,22 +51,5 @@ namespace Slack.Commands
         }
 
         #endregion
-
-        public override void Execute(CommandContext context)
-        {
-            var item = context.Items[0];
-            _message.Text = Settings.GetSetting("Slack.TestMessageText", "Hi there from Sitecore!");
-            _message.Token = item[TeamContext.TokenFieldId];
-            _message.Username = item[TeamContext.UsernameFieldId];
-            _message.Channel = Settings.GetSetting("Slack.TestMessageChannel", "general");
-            _service.PublishMessage(_message);
-        }
-
-        public override CommandState QueryState(CommandContext context)
-        {
-            var item = context.Items[0];
-
-            return item.TemplateName != TeamContext.TemplateNameStatic ? CommandState.Hidden : base.QueryState(context);
-        }
     }
 }
