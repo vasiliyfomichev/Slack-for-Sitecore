@@ -15,6 +15,8 @@ namespace Slack
             public const string LoggedOutEventGuid = "{}";
             public const string UserCreatedEventGuid = "{}";
             public const string UserDeletedEventGuid = "{}";
+            public const string PackageInstallStartedEventGuid = "{}";
+            public const string PackageInstallEndedEventGuid = "{}";
         }
     }
 }
