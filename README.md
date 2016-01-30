@@ -3,6 +3,7 @@ What is Slack module?
 
 Slack Sitecore module allows posting a wide variety of Sitecore events to Slack chat.
 
+![Slack](https://upload.wikimedia.org/wikipedia/en/7/76/Slack_Icon.png)
 ![Sitecore SignalR Tools](http://www.cmsbestpractices.com/wp-content/uploads/2015/07/sitecore-signalr-tools-logo.png)
 
 How to use Slack module?
