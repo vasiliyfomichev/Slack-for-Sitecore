@@ -27,9 +27,9 @@ content-length: 38
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 29
+content-length: 35
 
-Applications/16x16/folder.png
+Applications/32x32/folder_green.png
 ----field----
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
@@ -155,7 +155,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 3f7d82e2-e168-4b22-8c80-0fe940a73012
+revision: 8be26cbc-9f24-4d5f-a2d7-855d54f6e196
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
@@ -191,14 +191,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3f7d82e2-e168-4b22-8c80-0fe940a73012
+8be26cbc-9f24-4d5f-a2d7-855d54f6e196
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T092936Z
+20160130T164903Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

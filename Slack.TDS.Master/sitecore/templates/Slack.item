@@ -9,10 +9,17 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {0437FEE2-44C9-46A6-ABE9-28858D9FEE8C}
 templatekey: Template Folder
 
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 19
+
+Apps/32x32/News.png
 ----version----
 language: en
 version: 1
-revision: 2b93886a-7ef1-4826-81eb-1142fbbb2768
+revision: 2eb1b500-6926-434a-bc7f-12ad721f7370
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2b93886a-7ef1-4826-81eb-1142fbbb2768
+2eb1b500-6926-434a-bc7f-12ad721f7370
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T034041Z
+20160130T165450Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

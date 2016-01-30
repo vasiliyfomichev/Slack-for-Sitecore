@@ -17,6 +17,13 @@ content-length: 38
 
 {A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}
 ----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 35
+
+applications/32x32/folder_green.png
+----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
@@ -26,7 +33,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 22efb6bb-1d4f-4f4d-a746-e6b3a92e4345
+revision: f3d89177-a37e-40d3-bafc-ad739f350fab
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-22efb6bb-1d4f-4f4d-a746-e6b3a92e4345
+f3d89177-a37e-40d3-bafc-ad739f350fab
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T091653Z
+20160130T164910Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
