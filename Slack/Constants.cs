@@ -9,6 +9,12 @@ namespace Slack
     {
         public struct Events
         {
+            public const string PublishEndEventGuid = "{}";
+            public const string PublishBeginEventGuid = "{}";
+            public const string LoggedInEventGuid = "{}";
+            public const string LoggedOutEventGuid = "{}";
+            public const string UserCreatedEventGuid = "{}";
+            public const string UserDeletedEventGuid = "{}";
             public const string IndexingEndID = "{B96C1386-7A3F-4CBE-A710-6E3006380809}";
             public const string IndexingBeginID = "{9C110525-9753-419C-99EC-D201AD6C5AD1}";
 
@@ -26,6 +32,8 @@ namespace Slack
             public const string PublishFailedID = "{6A557224-F0A4-4AF9-9B35-73F3870B1BF0}";
             public const string PublishBeginEventID = "{7ABE0BA7-0583-4B56-8835-9C2656715C00}";
             public const string PublishEndEventID = "{727FB28B-0536-44C3-9210-F04A437FFB58}";
+            public const string PackageInstallStartedEventGuid = "{}";
+            public const string PackageInstallEndedEventGuid = "{}";
         }
 
         public struct Channel
