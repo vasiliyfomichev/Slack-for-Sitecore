@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 
@@ -19,11 +18,17 @@ namespace Slack
 
         #endregion
 
+        #region Contructors
+
         public Publication_Folder(Item item)
         {
             Item = item;
             Id = item.ID;
         }
+
+        #endregion
+
+        #region Methods
 
         public IList<Publication> GetPublications()
         {
@@ -38,5 +43,7 @@ namespace Slack
             }
             return list;
         }
+
+        #endregion
     }
 }
