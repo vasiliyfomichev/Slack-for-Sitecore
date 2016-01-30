@@ -12,5 +12,7 @@
         string Username { get; set; }
         bool AsUser { get; set; }
         string IconUrl { get; set; }
+
+        void UpdateChannelInfo(Channel channel, Publication publication);
     }
 }

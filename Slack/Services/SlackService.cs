@@ -14,7 +14,10 @@ namespace Slack.Services
 
         public void PublishMessage(ISlackMessage slackMessage)
         {
-            if (slackMessage.Token == null)
+            if (string.IsNullOrWhiteSpace(slackMessage.Token) 
+                || string.IsNullOrWhiteSpace(slackMessage.Channel)
+                || string.IsNullOrWhiteSpace(slackMessage.Username)
+                || string.IsNullOrWhiteSpace(slackMessage.Text))
                 return;
 
             var slackConnector = new SlackConnector.SlackConnector();

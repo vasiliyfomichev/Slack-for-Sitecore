@@ -48,7 +48,7 @@ namespace Slack.Pipelines
             //{
             //    _message.Text = $"Page event {args.PageEvent.Name} has been triggered.";
             //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
+            //    TODO: populate the rest of the message
             //    _service.PublishMessage(_message);
             //}
         }
