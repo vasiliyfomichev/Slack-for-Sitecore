@@ -26,7 +26,7 @@ namespace Slack.Tests
             var slackConnector = new SlackConnector.SlackConnector();
 
             // when
-            var connection = slackConnector.Connect(_config.Slack.ApiToken);
+            var connection = slackConnector.Connect(_config.Slack.ApiToken).Result;
             connection.OnDisconnect += SlackConnector_OnDisconnect;
             connection.OnMessageReceived += SlackConnectorOnOnMessageReceived;
 
