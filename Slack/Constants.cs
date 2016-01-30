@@ -47,7 +47,7 @@ namespace Slack
             public const string ApplicationShutdownEventId = "";
             public const string ApplicationMvcExceptionEventId = "";
             public const string PageEventEventId = "";
-            public const string CampaignTriggeredEventId = "";
+            public const string CampaignTriggeredEventId = "{2E4D6E5F-CEBA-4649-B8E4-99337DC75C6D}";
             public const string ListDeletionEventId = "";
             public const string ListCreationEventId = "";
             public const string PageTestStartedEventId = "";

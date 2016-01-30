@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {F089F137-287F-4401-B739-58C6388C8F5C}
+id: {4E813827-3501-454A-B2DB-D60A367DE236}
 database: master
-path: /sitecore/system/Modules/Slack/Events/OnPublishBegin
+path: /sitecore/system/Modules/Slack/Events/Role Created
 parent: {89B26A3C-1C1A-47C4-895F-534DB019BE5F}
-name: OnPublishBegin
+name: Role Created
 master: {00000000-0000-0000-0000-000000000000}
 template: {E8A6891D-CE13-4E9A-A002-D98FEE6DEC96}
 templatekey: Event
@@ -12,7 +12,7 @@ templatekey: Event
 ----version----
 language: en
 version: 1
-revision: a4a682e6-9626-41ce-b91d-03303961ab4d
+revision: 36607509-3792-4d18-9e49-30bc879d20ad
 
 ----field----
 field: {F7EC9E45-42FD-4D18-A259-3B8013CF298B}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a4a682e6-9626-41ce-b91d-03303961ab4d
+36607509-3792-4d18-9e49-30bc879d20ad
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T082915Z
+20160130T191150Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

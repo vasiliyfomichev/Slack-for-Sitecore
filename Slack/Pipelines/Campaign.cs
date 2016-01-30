@@ -39,7 +39,7 @@ namespace Slack.Pipelines
         public void Process(TriggerCampaignArgs args)
         {
             if (args == null) return;
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishBegin));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Pipelines.CampaignTriggeredEventId));
             if (!publications.Any())
                 return;
 
