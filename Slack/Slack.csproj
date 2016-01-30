@@ -148,6 +148,8 @@
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
+    <Compile Include="Pipelines\TestStop.cs" />
+    <Compile Include="Pipelines\TestStart.cs" />
     <Compile Include="Pipelines\PageTestStart.cs" />
     <Compile Include="Pipelines\ListDeletion.cs" />
     <Compile Include="Pipelines\ListCreation.cs" />
