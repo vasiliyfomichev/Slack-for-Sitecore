@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿#region
+
 using Slack.Contracts;
+
+#endregion
 
 namespace Slack.Models
 {
-    public class SlackChannelConfig:ISlackChannelConfig
+    public class SlackChannelConfig : ISlackChannelConfig
     {
         public string IconUrl { get; set; }
         public string ChannelName { get; set; }

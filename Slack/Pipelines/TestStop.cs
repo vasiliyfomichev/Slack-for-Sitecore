@@ -1,18 +1,13 @@
-﻿
+﻿#region
+
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Sitecore.Analytics.Pipelines.RegisterPageEvent;
-using Sitecore.Analytics.Pipelines.TriggerCampaign;
-using Sitecore.ContentTesting.Pipelines.StartPageTest;
-using Sitecore.ContentTesting.Pipelines.StartTest;
 using Sitecore.ContentTesting.Pipelines.StopTest;
-using Sitecore.ListManagement.ContentSearch.Pipelines;
-using Sitecore.Pipelines;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+
+#endregion
 
 namespace Slack.Pipelines
 {
@@ -45,13 +40,14 @@ namespace Slack.Pipelines
         {
             if (args == null) return;
             var channelConfigs =
-                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.TestStoppedEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.TestStoppedEventId));
             if (!channelConfigs.Any())
                 return;
 
             foreach (var channelConfig in channelConfigs)
             {
-                _message.Text = $"Test stopped for {args.Configuration.ContentItem}. The winner is {args.WinnerVersion.Paths.Path}.";
+                _message.Text =
+                    $"Test stopped for {args.Configuration.ContentItem}. The winner is {args.WinnerVersion.Paths.Path}.";
                 _message.Channel = channelConfig.ChannelName;
                 //TODO: populate the rest of the message
                 _service.PublishMessage(_message);

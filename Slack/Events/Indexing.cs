@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Linq;
-using System.Web;
 using Sitecore.Events;
-using Sitecore.Pipelines.LoggedIn;
-using Sitecore.Publishing;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+
+#endregion
 
 namespace Slack.Events
 {
@@ -50,7 +50,6 @@ namespace Slack.Events
             if (indexer == null) return;
             foreach (var channelConfig in channelConfigs)
             {
-                
                 _message.Channel = channelConfig.ChannelName;
                 //TODO: populate the rest of the message
                 _service.PublishMessage(_message);
@@ -69,7 +68,6 @@ namespace Slack.Events
 
             foreach (var channelConfig in channelConfigs)
             {
-                
                 _message.Channel = channelConfig.ChannelName;
                 //TODO: populate the rest of the message
                 _service.PublishMessage(_message);
@@ -77,7 +75,5 @@ namespace Slack.Events
         }
 
         #endregion
-
-
     }
 }

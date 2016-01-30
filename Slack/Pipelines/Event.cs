@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Linq;
-using System.Web;
 using Sitecore.Analytics.Pipelines.RegisterPageEvent;
-using Sitecore.Pipelines;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+
+#endregion
 
 namespace Slack.Pipelines
 {
@@ -39,7 +40,7 @@ namespace Slack.Pipelines
         {
             if (args == null) return;
             var channelConfigs =
-                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.PageEventEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.PageEventEventId));
             if (!channelConfigs.Any())
                 return;
 

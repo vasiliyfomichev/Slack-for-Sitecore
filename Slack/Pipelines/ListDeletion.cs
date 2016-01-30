@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Linq;
-using System.Web;
-using Sitecore.Analytics.Pipelines.RegisterPageEvent;
-using Sitecore.Analytics.Pipelines.TriggerCampaign;
 using Sitecore.ListManagement.ContentSearch.Pipelines;
-using Sitecore.Pipelines;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+
+#endregion
 
 namespace Slack.Pipelines
 {
@@ -41,7 +40,7 @@ namespace Slack.Pipelines
         {
             if (args == null) return;
             var channelConfigs =
-                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ListDeletionEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ListDeletionEventId));
             if (!channelConfigs.Any())
                 return;
 

@@ -1,9 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Slack.Contracts;
-using Slack.Models;
+
+#endregion
 
 namespace Slack.Services
 {

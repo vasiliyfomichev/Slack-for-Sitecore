@@ -1,23 +1,21 @@
-﻿#region 
+﻿#region
+
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Sitecore;
 using Sitecore.Configuration;
 using Sitecore.Events;
 using Sitecore.Publishing;
 using Sitecore.SecurityModel;
 using Slack.Contracts;
 using Slack.Models;
-using Slack.Services; 
+using Slack.Services;
+
 #endregion
 
 namespace Slack.Events
 {
     public class Publish
     {
-
         #region Fields
 
         private readonly ISlackMessage _message;
@@ -29,8 +27,8 @@ namespace Slack.Events
 
         public Publish()
         {
-           _message = new SlackMessage();
-            _service = new SlackService(); 
+            _message = new SlackMessage();
+            _service = new SlackService();
         }
 
         public Publish(ISlackService service, ISlackMessage message)
@@ -53,7 +51,7 @@ namespace Slack.Events
             var publisher = Event.ExtractParameter(args, 0) as Publisher;
             if (publisher == null) return;
             foreach (var channelConfig in channelConfigs)
-            { 
+            {
                 _message.Text = PopulatePublishMessage(publisher, "was initiated");
                 _message.Channel = channelConfig.ChannelName;
                 //TODO: populate the rest of the message
@@ -69,7 +67,7 @@ namespace Slack.Events
                 return;
             var publisher = Event.ExtractParameter(args, 0) as Publisher;
             if (publisher == null) return;
-            
+
 
             foreach (var channelConfig in channelConfigs)
             {

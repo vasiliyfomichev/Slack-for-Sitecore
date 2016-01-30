@@ -1,9 +1,6 @@
-﻿using Sitecore.Data;
-
-namespace Slack.Templates
+﻿namespace Slack.Templates
 {
     public class Event
     {
-
     }
 }

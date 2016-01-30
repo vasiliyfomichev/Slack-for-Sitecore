@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Linq;
-using System.Web;
 using Sitecore.Mvc.Pipelines.MvcEvents.Exception;
-using Sitecore.Pipelines;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+
+#endregion
 
 namespace Slack.Pipelines
 {
@@ -39,11 +40,11 @@ namespace Slack.Pipelines
         {
             if (args == null) return;
             var channelConfigs =
-                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ApplicationMvcExceptionEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ApplicationMvcExceptionEventId));
             if (!channelConfigs.Any())
                 return;
             var message = $"MVC error occured on item {args.PageContext.Item.Paths.Path}. \n" +
-                                $"{args.Message} \n";
+                          $"{args.Message} \n";
             foreach (var channelConfig in channelConfigs)
             {
                 _message.Text = message;

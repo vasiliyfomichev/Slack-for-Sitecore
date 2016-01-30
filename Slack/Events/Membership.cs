@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Linq;
-using System.Web;
 using System.Web.Security;
 using Sitecore.Events;
-using Sitecore.Pipelines.LoggedIn;
-using Sitecore.Publishing;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+
+#endregion
 
 namespace Slack.Events
 {
@@ -65,7 +65,7 @@ namespace Slack.Events
                 return;
             var user = Event.ExtractParameter(args, 0) as MembershipUser;
             if (user == null) return;
-            
+
             foreach (var channelConfig in channelConfigs)
             {
                 _message.Text = $"User {user.UserName} was deleted.";
@@ -112,7 +112,5 @@ namespace Slack.Events
         }
 
         #endregion
-
-
     }
-} 
+}

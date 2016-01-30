@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Linq;
-using System.Web;
 using Sitecore.Events;
-using Sitecore.Pipelines.LoggedIn;
 using Sitecore.Publishing;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+
+#endregion
 
 namespace Slack.Events
 {
@@ -74,7 +75,5 @@ namespace Slack.Events
         }
 
         #endregion
-
-
     }
 }

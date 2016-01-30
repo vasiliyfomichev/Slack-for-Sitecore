@@ -1,4 +1,8 @@
-﻿using Slack.Contracts;
+﻿#region
+
+using Slack.Contracts;
+
+#endregion
 
 namespace Slack.Models
 {
