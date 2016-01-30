@@ -13,12 +13,9 @@ namespace Slack
             public const string OnIndexingStart = "{9C110525-9753-419C-99EC-D201AD6C5AD1}";
             public const string EventsFolder = "{89B26A3C-1C1A-47C4-895F-534DB019BE5F}";
 
-            public const string ItemCreatedID = "{9D997FF2-4A8F-4923-9256-9198540E692E}";
-            public const string ItemDeletedID = "{10869EE4-663C-429E-B645-F7B0E2853008}";
-            public const string ItemMovedID = "{62709B5D-EC90-4042-83E6-4B51C2546247}";
-
-            public const string LoggedInEventId = "{94507A41-470E-4B50-BF20-5C6C6A3C577E}";
-            public const string LoggedOutEventId = "{61E43D90-4289-4080-A4FF-344378839F28}";
+            public const string OnItemCreated = "{43F7F225-8C98-44B1-89BD-29B6EBDF2483}";
+            public const string OnItemDeleted = "{C4F71B0F-951C-4E35-AE0E-E7D63FBE4311}";
+            public const string OnItemMoved = "{C79152B0-D6D4-4A34-94C0-5C6325F63580}";
 
             public const string PackageInstallFinishedID = "{D57A5A9F-682F-49E8-997D-F2BA9DBADA54}";
             public const string PackageInstallStartedID = "{204769B1-59B8-4A7D-BE1A-FB7E94221580}";
