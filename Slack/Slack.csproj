@@ -74,6 +74,11 @@
       <HintPath>..\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.Social.Client.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Sitecore.Social.Client.Api.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -113,6 +118,7 @@
     <Compile Include="Events\Membership.cs" />
     <Compile Include="Events\Package.cs" />
     <Compile Include="Events\Indexing.cs" />
+    <Compile Include="Events\Social.cs" />
     <Compile Include="Events\Security.cs" />
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />

@@ -25,11 +25,14 @@ namespace Slack
             public const string PackageInstallFinishedID = "{D57A5A9F-682F-49E8-997D-F2BA9DBADA54}";
             public const string PackageInstallStartedID = "{204769B1-59B8-4A7D-BE1A-FB7E94221580}";
 
-            public const string PublishFailedID = "{6A557224-F0A4-4AF9-9B35-73F3870B1BF0}";
+            public const string PublishFailedEventId = "{6A557224-F0A4-4AF9-9B35-73F3870B1BF0}";
             public const string PublishBeginEventID = "{7ABE0BA7-0583-4B56-8835-9C2656715C00}";
             public const string PublishEndEventID = "{727FB28B-0536-44C3-9210-F04A437FFB58}";
             public const string PackageInstallStartedEventGuid = "{}";
             public const string PackageInstallEndedEventGuid = "{}";
+            public const string SocialUserCreatedEventGuid = "{}";
+            public const string SocialProfileAttachedEventGuid = "{}";
+            public const string SocialUserLoggedInEventGuid = "{}";
         }
 
         public struct Channel

@@ -11,6 +11,7 @@ using Slack.Services;
 
 namespace Slack.Events
 {
+    // events don't fire for login/logout
     public class Security
     {
         #region Fields

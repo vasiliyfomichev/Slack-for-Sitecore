@@ -80,6 +80,25 @@ namespace Slack.Events
             }
         }
 
+        public void OnPublishFail(object sender, EventArgs args)
+        {
+            var channelConfigs =
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishFailedEventId));
+            if (!channelConfigs.Any())
+                return;
+            var publisher = Event.ExtractParameter(args, 0) as Publisher;
+            if (publisher == null) return;
+
+
+            foreach (var channelConfig in channelConfigs)
+            {
+                _message.Text = PopulatePublishMessage(publisher, "failed");
+                _message.Channel = channelConfig.ChannelName;
+                //TODO: populate the rest of the message
+                _service.PublishMessage(_message);
+            }
+        }
+
         private static string PopulatePublishMessage(Publisher publisher, string action)
         {
             using (new SecurityDisabler())
