@@ -38,6 +38,7 @@ namespace Slack.Commands
 
         public override void Execute(CommandContext context)
         {
+            //TODO: check this functionality.
             var item = context.Items[0];
             var username = item["Username"];
             var token = item["Token"];

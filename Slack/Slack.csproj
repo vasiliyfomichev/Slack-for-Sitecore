@@ -95,13 +95,16 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sitecore.ContentSearch">
-      <HintPath>..\..\Habitat\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+      <HintPath>..\lib\Sitecore.ContentSearch.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq">
-      <HintPath>..\..\Habitat\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <HintPath>..\lib\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq.Lucene">
-      <HintPath>..\..\Habitat\lib\Sitecore\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
+      <HintPath>..\lib\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\lib\Sitecore.Kernel.dll</HintPath>
