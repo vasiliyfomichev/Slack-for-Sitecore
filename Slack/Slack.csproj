@@ -45,13 +45,6 @@
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.7.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Glass.Mapper.Sc.4.0.7.56\lib\net45\Glass.Mapper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Glass.Mapper.Sc">
-      <HintPath>..\packages\Glass.Mapper.Sc.4.0.7.56\lib\81\Glass.Mapper.Sc.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -148,8 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\TeamAuthenticationTest.cs" />
-    <Compile Include="App_Start\GlassMapperSc.cs" />
-    <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Contracts\ISlackChannelConfig.cs" />
     <Compile Include="Contracts\ISlackMessage.cs" />

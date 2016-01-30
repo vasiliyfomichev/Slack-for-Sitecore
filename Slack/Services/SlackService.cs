@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using Glass.Mapper.Sc;
 using Sitecore.Data;
 using Slack.Contracts;
-using Slack.Models;
 using SlackConnector;
 using SlackConnector.Models;
 
@@ -14,6 +10,8 @@ namespace Slack.Services
 {
     internal class SlackService : ISlackService
     {
+        #region Interface Implementations
+
         public void PublishMessage(ISlackMessage slackMessage)
         {
             var slackConnector = new SlackConnector.SlackConnector();
@@ -21,7 +19,10 @@ namespace Slack.Services
             var message = new BotMessage
             {
                 Text = slackMessage.Text,
-                ChatHub = connection.ConnectedChannels().First(x => x.Name.Equals("#" + slackMessage.Channel, StringComparison.InvariantCultureIgnoreCase))
+                ChatHub =
+                    connection.ConnectedChannels()
+                        .First(
+                            x => x.Name.Equals("#" + slackMessage.Channel, StringComparison.InvariantCultureIgnoreCase))
             };
 
             // when
@@ -30,13 +31,14 @@ namespace Slack.Services
 
         public IList<Publication> GetApplicablePublications(Guid eventId)
         {
-            var item = Sitecore.Data.Database.GetDatabase("master").GetItem(Publication_Folder.InstanceId);
+            var item = Database.GetDatabase("master").GetItem(Publication_Folder.InstanceId);
 
             var publicationFolder = new Publication_Folder(item);
             var publications = publicationFolder.GetPublications();
 
             return publications.Where(publication => publication.Events.Contains(ID.Parse(eventId))).ToList();
         }
-        
+
+        #endregion
     }
 }

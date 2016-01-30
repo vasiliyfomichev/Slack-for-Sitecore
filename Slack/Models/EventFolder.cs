@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Glass.Mapper.Sc.Configuration.Attributes;
-using Sitecore.Data;
+﻿using Sitecore.Data;
 using Sitecore.Data.Items;
 
 namespace Slack
@@ -22,11 +17,14 @@ namespace Slack
 
         #endregion
 
+        #region Contructors
+
         public Event_Folder(Item item)
         {
             Item = item;
             Id = item.ID;
         }
-    }
 
+        #endregion
+    }
 }
