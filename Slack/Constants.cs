@@ -9,10 +9,6 @@ namespace Slack
     {
         public struct Events
         {
-            public const string PublishEndEventGuid = "{}";
-            public const string PublishBeginEventGuid = "{}";
-            public const string LoggedInEventGuid = "{}";
-            public const string LoggedOutEventGuid = "{}";
             public const string UserCreatedEventGuid = "{}";
             public const string UserDeletedEventGuid = "{}";
             public const string IndexingEndID = "{B96C1386-7A3F-4CBE-A710-6E3006380809}";
@@ -23,8 +19,8 @@ namespace Slack
             public const string ItemMovedID = "{62709B5D-EC90-4042-83E6-4B51C2546247}";
             public const string ItemSavedID = "{CC11DB70-40CB-4980-8298-236C09FAE0FA}";
 
-            public const string LoginID = "{94507A41-470E-4B50-BF20-5C6C6A3C577E}";
-            public const string Logout = "{61E43D90-4289-4080-A4FF-344378839F28}";
+            public const string LoggedInEventId = "{94507A41-470E-4B50-BF20-5C6C6A3C577E}";
+            public const string LoggedOutEventId = "{61E43D90-4289-4080-A4FF-344378839F28}";
 
             public const string PackageInstallFinishedID = "{D57A5A9F-682F-49E8-997D-F2BA9DBADA54}";
             public const string PackageInstallStartedID = "{204769B1-59B8-4A7D-BE1A-FB7E94221580}";

@@ -11,7 +11,7 @@ using Slack.Services;
 
 namespace Slack.Events
 {
-    public class Security
+    public class Indexing
     {
         #region Fields
 
@@ -22,13 +22,13 @@ namespace Slack.Events
 
         #region Constructors
 
-        public Security()
+        public Indexing()
         {
             _message = new SlackMessage();
             _service = new SlackService();
         }
 
-        public Security(ISlackService service, ISlackMessage message)
+        public Indexing(ISlackService service, ISlackMessage message)
         {
             _message = message;
             _service = service;
@@ -38,15 +38,15 @@ namespace Slack.Events
 
         #region Methods
 
-        public void OnLoggedIn(object sender, EventArgs args)
+        public void OnIndexingStart(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedInEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingBeginID));
             if (!channelConfigs.Any())
                 return;
 
-            var publisher = Event.ExtractParameter(args, 0);
-            if (publisher == null) return;
+            var indexer = Event.ExtractParameter(args, 0);
+            if (indexer == null) return;
             foreach (var channelConfig in channelConfigs)
             {
                 
@@ -56,14 +56,14 @@ namespace Slack.Events
             }
         }
 
-        public void OnLoggedOut(object sender, EventArgs args)
+        public void OnIndexingEnd(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedOutEventId));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingEndID));
             if (!channelConfigs.Any())
                 return;
-            var publisher = Event.ExtractParameter(args, 0) as Publisher;
-            if (publisher == null) return;
+            var indexer = Event.ExtractParameter(args, 0);
+            if (indexer == null) return;
 
 
             foreach (var channelConfig in channelConfigs)

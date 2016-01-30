@@ -46,7 +46,7 @@ namespace Slack.Events
         public void OnPublishBegin(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishBeginEventGuid));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishBeginEventID));
             if (!channelConfigs.Any())
                 return;
 
@@ -64,7 +64,7 @@ namespace Slack.Events
         public void OnPublishEnd(object sender, EventArgs args)
         {
             var channelConfigs =
-                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishEndEventGuid));
+                _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PublishEndEventID));
             if (!channelConfigs.Any())
                 return;
             var publisher = Event.ExtractParameter(args, 0) as Publisher;
