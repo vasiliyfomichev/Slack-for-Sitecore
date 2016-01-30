@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {13AF25DC-E30E-4BF2-A18C-28480B40AAA3}
+id: {71A5B817-0C4D-4951-B52D-7095DA2D5004}
 database: master
-path: /sitecore/system/Modules/Slack/Events/OnLoggedIn
+path: /sitecore/system/Modules/Slack/Events/User Created
 parent: {89B26A3C-1C1A-47C4-895F-534DB019BE5F}
-name: OnLoggedIn
+name: User Created
 master: {00000000-0000-0000-0000-000000000000}
 template: {E8A6891D-CE13-4E9A-A002-D98FEE6DEC96}
 templatekey: Event
@@ -12,15 +12,8 @@ templatekey: Event
 ----version----
 language: en
 version: 1
-revision: a4a682e6-9626-41ce-b91d-03303961ab4d
+revision: b336a6ca-b287-414a-ae49-c7cb84a5d55a
 
-----field----
-field: {F7EC9E45-42FD-4D18-A259-3B8013CF298B}
-name: Name
-key: name
-content-length: 6
-
-Event1
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -34,14 +27,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a4a682e6-9626-41ce-b91d-03303961ab4d
+b336a6ca-b287-414a-ae49-c7cb84a5d55a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T082915Z
+20160130T191205Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

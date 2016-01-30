@@ -33,8 +33,15 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: c5e1b6ae-8567-4eb8-9419-a9d0d47a60cd
+revision: 1d638c8b-0f12-4f21-8892-7aefa417b18a
 
+----field----
+field: {9541E67D-CE8C-4225-803D-33F7F29F09EF}
+name: __Short description
+key: __short description
+content-length: 54
+
+Channels to post this message to when the event occurs
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c5e1b6ae-8567-4eb8-9419-a9d0d47a60cd
+1d638c8b-0f12-4f21-8892-7aefa417b18a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T085613Z
+20160130T191650Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

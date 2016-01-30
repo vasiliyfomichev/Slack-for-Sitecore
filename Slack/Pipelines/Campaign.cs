@@ -39,7 +39,7 @@ namespace Slack.Pipelines
         public void Process(TriggerCampaignArgs args)
         {
             if (args == null) return;
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishBegin));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Pipelines.CampaignTriggeredEventId));
             if (!publications.Any())
                 return;
 
@@ -47,7 +47,7 @@ namespace Slack.Pipelines
             {
                 foreach (var channel in publication.GetChannels())
                 {
-                    _message.Text = $"Campaign {args.PageEvent.Name} has been triggered.";
+                    _message.Text = $"Campaign {args.Definition.DisplayName} has been triggered.";
                     _message.UpdateChannelInfo(channel, publication);
                     _service.PublishMessage(_message);
                 }

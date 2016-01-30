@@ -26,8 +26,22 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: ddaabd32-2b4c-40f1-9654-9024612dd9eb
+revision: 4bc66df0-b63b-47d6-88fd-5ae75567936b
 
+----field----
+field: {577F1689-7DE4-4AD2-A15F-7FDC1759285F}
+name: __Long description
+key: __long description
+content-length: 142
+
+This is a long token that is generated on the slack website, it would look something like xoxp-198497877780-19862023985-19867206919-651bab3f66
+----field----
+field: {9541E67D-CE8C-4225-803D-33F7F29F09EF}
+name: __Short description
+key: __short description
+content-length: 32
+
+token used for Slack integration
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -41,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ddaabd32-2b4c-40f1-9654-9024612dd9eb
+4bc66df0-b63b-47d6-88fd-5ae75567936b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T103341Z
+20160130T191042Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

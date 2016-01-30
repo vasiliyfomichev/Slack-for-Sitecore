@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sitecore.Configuration;
 using Sitecore.Data;
 using Slack.Contracts;
 using SlackConnector;
@@ -28,7 +29,7 @@ namespace Slack.Services
                 ChatHub =
                     connection.ConnectedChannels()
                         .First(
-                            x => x.Name.Equals("#" + slackMessage.Channel, StringComparison.InvariantCultureIgnoreCase))
+                            x => x.Name.Equals("#" + slackMessage.Channel.Trim('#'), StringComparison.InvariantCultureIgnoreCase))
             };
 
             // when
@@ -37,7 +38,7 @@ namespace Slack.Services
 
         public IList<Publication> GetApplicablePublications(Guid eventId)
         {
-            var item = Database.GetDatabase("master").GetItem(Publication_Folder.InstanceId);
+            var item = Database.GetDatabase(Settings.GetSetting("Slack.AuthoringDatabase", "master")).GetItem(Publication_Folder.InstanceId);
 
             var publicationFolder = new Publication_Folder(item);
             var publications = publicationFolder.GetPublications();
