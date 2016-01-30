@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {8DD410DE-1E2D-4579-A3CF-CEBE6D05941D}
+database: master
+path: /sitecore/system/Modules/Slack/Events/List Deletion
+parent: {89B26A3C-1C1A-47C4-895F-534DB019BE5F}
+name: List Deletion
+master: {00000000-0000-0000-0000-000000000000}
+template: {E8A6891D-CE13-4E9A-A002-D98FEE6DEC96}
+templatekey: Event
+
+----version----
+language: en
+version: 1
+revision: 1dbdff3b-47b8-4a2c-a68f-ab76035073e1
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160130T043444Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1dbdff3b-47b8-4a2c-a68f-ab76035073e1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160130T191109Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
