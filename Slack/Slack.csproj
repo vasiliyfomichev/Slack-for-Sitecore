@@ -123,6 +123,10 @@
     <Compile Include="Models\SlackMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SlackService.cs" />
+    <Compile Include="Templates\Channel.cs" />
+    <Compile Include="Templates\Event.cs" />
+    <Compile Include="Templates\EventType.cs" />
+    <Compile Include="Templates\Publication.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pipelines\" />
