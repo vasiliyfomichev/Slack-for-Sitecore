@@ -7,6 +7,7 @@ using Sitecore.Events;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+using Sitecore.Data;
 
 #endregion
 
@@ -42,60 +43,92 @@ namespace Slack.Events
 
         public void OnItemCreated(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemCreatedID));
-            //if (!channelConfigs.Any())
-            //    return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnItemCreated));
+            if (!publications.Any())
+                return;
 
-            //var item = Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;
-            //if (item == null) return;
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = $"Item {item.Item.Paths.Path} was created.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var itemEvent = Sitecore.Events.Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;
+            if (itemEvent == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = PopulateItemCreatedMessage(publication, itemEvent, "was created");
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnItemDeleted(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemDeletedID));
-            //if (!channelConfigs.Any())
-            //    return;
-            //var item = Event.ExtractParameter(args, 0) as ItemDeletedEventArgs;
-            //if (item == null) return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnItemDeleted));
+            if (!publications.Any())
+                return;
 
+            var itemEvent = Sitecore.Events.Event.ExtractParameter(args, 0) as Sitecore.Data.Items.Item;
+            if (itemEvent == null) return;
 
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = $"Item {item.Item.Paths.Path} was deleted.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = PopulateItemMessage(publication, itemEvent, "was deleted");
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnItemMoved(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.ItemMovedID));
-            //if (!channelConfigs.Any())
-            //    return;
-            //var item = Event.ExtractParameter(args, 0) as ItemMovedEventArgs;
-            //if (item == null) return;
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnItemMoved));
+            if (!publications.Any())
+                return;
 
+            var itemEvent = Sitecore.Events.Event.ExtractParameter(args, 0) as Sitecore.Data.Items.Item;
+            if (itemEvent == null) return;
 
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = $"Item {item.Item.Paths.Path} was moved.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = PopulateItemMessage(publication, itemEvent, "was moved");
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
+        private static string PopulateItemCreatedMessage(Publication publication, ItemCreatedEventArgs itemEvent, string action)
+        {
+            var message = "";
+            if (!string.IsNullOrEmpty(publication.Message))
+            {
+                message = publication.Message + "\n";
+            }
+            message +=
+                $"Item {itemEvent.Item.Name} {action}\n" +
+                $"Path: {itemEvent.Item.Paths.Path}\n" +
+                $"ID: {itemEvent.Item.ID}\n" +
+                $"Created by: {itemEvent.Item.Security.GetOwner()}\n";
+            return message;
+        }
+
+        private static string PopulateItemMessage(Publication publication, Sitecore.Data.Items.Item itemEvent, string action)
+        {
+            var message = "";
+            if (!string.IsNullOrEmpty(publication.Message))
+            {
+                message = publication.Message + "\n";
+            }
+            message +=
+                $"Item {itemEvent.Name} {action}\n" +
+                $"ID: {itemEvent.ID}\n" +
+                $"Path: {itemEvent.Paths.Path}\n";
+            return message;
+        }
         #endregion
     }
 }

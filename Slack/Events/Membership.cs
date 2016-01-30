@@ -52,12 +52,7 @@ namespace Slack.Events
                 foreach (var channel in publication.GetChannels())
                 {
                     _message.Text = PopulateMembershipUserMessage(publication, membershipUser, "was initiated");
-                    _message.Channel = channel.Channel_Name;
-                    var teamContext = publication.GetTeamContext();
-                    if (teamContext == null)
-                        continue;
-                    _message.Token = teamContext.Token;
-                    _message.Username = teamContext.Username;
+                    _message.UpdateChannelInfo(channel, publication);
                     _service.PublishMessage(_message);
                 }
             }
@@ -78,11 +73,6 @@ namespace Slack.Events
                 {
                     _message.Text = PopulateMembershipUserMessage(publication, membershipUser, "was deleted");
                     _message.Channel = channel.Channel_Name;
-                    var teamContext = publication.GetTeamContext();
-                    if (teamContext == null)
-                        continue;
-                    _message.Token = teamContext.Token;
-                    _message.Username = teamContext.Username;
                     _service.PublishMessage(_message);
                 }
             }
@@ -103,12 +93,7 @@ namespace Slack.Events
                 {
                     _message.Text = $"Role {membershipRole} was created.";
                     //TODO: populate the rest of the message
-                    _message.Channel = channel.Channel_Name;
-                    var teamContext = publication.GetTeamContext();
-                    if (teamContext == null)
-                        continue;
-                    _message.Token = teamContext.Token;
-                    _message.Username = teamContext.Username;
+                    _message.UpdateChannelInfo(channel, publication);
                     _service.PublishMessage(_message);
                 }
             }
@@ -129,12 +114,7 @@ namespace Slack.Events
                 {
                     _message.Text = $"Role {membershipRole} was deleted.";
                     //TODO: populate the rest of the message
-                    _message.Channel = channel.Channel_Name;
-                    var teamContext = publication.GetTeamContext();
-                    if (teamContext == null)
-                        continue;
-                    _message.Token = teamContext.Token;
-                    _message.Username = teamContext.Username;
+                    _message.UpdateChannelInfo(channel, publication);
                     _service.PublishMessage(_message);
                 }
             }

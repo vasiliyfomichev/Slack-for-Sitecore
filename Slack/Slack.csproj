@@ -170,7 +170,6 @@
     <Compile Include="Services\SlackService.cs" />
     <Compile Include="Models\Channel.cs" />
     <Compile Include="Models\Event.cs" />
-    <Compile Include="Models\EventType.cs" />
     <Compile Include="Models\Publication.cs" />
   </ItemGroup>
   <ItemGroup>
