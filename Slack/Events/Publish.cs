@@ -45,7 +45,7 @@ namespace Slack.Events
 
         public void OnPublishBegin(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishBegin));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnPublishBegin));
             if (!publications.Any())
                 return;
 
@@ -68,7 +68,7 @@ namespace Slack.Events
 
         public void OnPublishEnd(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishEnd));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnPublishEnd));
             if (!publications.Any())
                 return;
 
@@ -91,7 +91,7 @@ namespace Slack.Events
 
         public void OnPublishFail(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPublishEnd));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnPublishEnd));
             if (!publications.Any())
                 return;
             var publisher = Sitecore.Events.Event.ExtractParameter(args, 0) as Publisher;

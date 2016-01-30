@@ -42,7 +42,7 @@ namespace Slack.Events
         public void OnIndexingStart(object sender, EventArgs args)
         {
             //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingBeginID));
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.IndexingBeginID));
             //if (!channelConfigs.Any())
             //    return;
 
@@ -59,7 +59,7 @@ namespace Slack.Events
         public void OnIndexingEnd(object sender, EventArgs args)
         {
             //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.IndexingEndID));
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.IndexingEnd));
             //if (!channelConfigs.Any())
             //    return;
             //var indexer = Event.ExtractParameter(args, 0);

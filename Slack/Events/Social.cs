@@ -44,7 +44,7 @@ namespace Slack.Events
         public void OnUserCreated(object sender, EventArgs args)
         {
             //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialUserCreatedEventGuid));
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.SocialUserCreatedEventGuid));
             //if (!channelConfigs.Any())
             //    return;
 
@@ -62,7 +62,7 @@ namespace Slack.Events
         public void OnUserLoggedIn(object sender, EventArgs args)
         {
             //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialUserLoggedInEventGuid));
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.SocialUserLoggedInEventGuid));
             //if (!channelConfigs.Any())
             //    return;
             //var loggedInEvent = Event.ExtractParameter(args, 0) as SocialNetworkUserLoggedInEventArgs;
@@ -81,7 +81,7 @@ namespace Slack.Events
         public void OnUserProfileAttached(object sender, EventArgs args)
         {
             //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.SocialProfileAttachedEventGuid));
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.SocialProfileAttachedEventGuid));
             //if (!channelConfigs.Any())
             //    return;
             //var profileAttachedEvent = Event.ExtractParameter(args, 0) as SocialProfileAttachedEventArgs;

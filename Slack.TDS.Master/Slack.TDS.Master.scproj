@@ -330,5 +330,10 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
   </ItemGroup>
+  <ItemGroup>
+    <BundledProject Include="..\Slack.TDS.Core\Slack.TDS.Core.scproj">
+      <ProjectId>{cdc2759f-6337-4b8e-8e4e-fa209a5c7895}</ProjectId>
+    </BundledProject>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>

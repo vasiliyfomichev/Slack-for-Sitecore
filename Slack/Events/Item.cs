@@ -43,7 +43,7 @@ namespace Slack.Events
 
         public void OnItemCreated(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnItemCreated));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnItemCreated));
             if (!publications.Any())
                 return;
 
@@ -63,7 +63,7 @@ namespace Slack.Events
 
         public void OnItemDeleted(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnItemDeleted));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnItemDeleted));
             if (!publications.Any())
                 return;
 
@@ -83,7 +83,7 @@ namespace Slack.Events
 
         public void OnItemMoved(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnItemMoved));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnItemMoved));
             if (!publications.Any())
                 return;
 

@@ -39,7 +39,7 @@ namespace Slack.Pipelines
         public void Process(PipelineArgs args)
         {
             if (args == null) return;
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Pipelines.ApplicationShutdownEventId));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.PipelineEventIds.ApplicationShutdown));
             if (!publications.Any())
                 return;
 

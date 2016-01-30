@@ -39,7 +39,7 @@ namespace Slack.Pipelines
         public void Process(RegisterPageEventArgs args)
         {
             if (args == null) return;
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Pipelines.PageEventEventId));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.PipelineEventIds.PageEvent));
             if (!publications.Any())
                 return;
 

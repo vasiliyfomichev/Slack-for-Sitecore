@@ -39,7 +39,7 @@ namespace Slack.Pipelines
         public void Process(StartPageTestArgs args)
         {
             if (args == null) return;
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Pipelines.PageTestStartedEventId));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.PipelineEventIds.PageTestStarted));
             if (!publications.Any())
                 return;
 

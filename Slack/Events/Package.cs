@@ -40,7 +40,7 @@ namespace Slack.Events
 
         public void OnPackageInstallStarted(object sender, EventArgs args)
         {            
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPackageInstallStart));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnPackageInstallStart));
             if (!publications.Any())
                 return;
 
@@ -61,7 +61,7 @@ namespace Slack.Events
 
         public void OnPackageInstallEnded(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPackageInstallEnd));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnPackageInstallEnd));
             if (!publications.Any())
                 return;
 

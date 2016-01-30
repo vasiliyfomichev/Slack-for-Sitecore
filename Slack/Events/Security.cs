@@ -43,7 +43,7 @@ namespace Slack.Events
         public void OnLoggedIn(object sender, EventArgs args)
         {
             //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedInEventId));
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.LoggedInEventId));
             //if (!channelConfigs.Any())
             //    return;
 
@@ -60,7 +60,7 @@ namespace Slack.Events
         public void OnLoggedOut(object sender, EventArgs args)
         {
             //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.LoggedOutEventId));
+            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.EventIds.LoggedOutEventId));
             //if (!channelConfigs.Any())
             //    return;
             //var publisher = Event.ExtractParameter(args, 0) as Publisher;
