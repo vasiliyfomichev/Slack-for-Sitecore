@@ -45,9 +45,9 @@
             public const string CampaignTriggeredEventId = "{2E4D6E5F-CEBA-4649-B8E4-99337DC75C6D}";
             public const string ListDeletionEventId = "{8DD410DE-1E2D-4579-A3CF-CEBE6D05941D}";
             public const string ListCreationEventId = "{FD11D6EC-4EA6-4E6C-8F94-6E847A1D8F95}";
-            public const string PageTestStartedEventId = "";
-            public const string TestStartedEventId = "";
-            public const string TestStoppedEventId = "";
+            public const string PageTestStartedEventId = "{9984E971-5DB0-4B25-97AA-453C97627CC8}";
+            public const string TestStartedEventId = "{EDCFCAEF-E8EA-49F8-A651-7651E7920072}";
+            public const string TestStoppedEventId = "{7D10E748-160B-4E3E-BD2F-4ECE3F4A1754}";
         }
 
         #endregion
