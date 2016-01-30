@@ -2,11 +2,10 @@
 
 using System;
 using System.Linq;
-using Sitecore.Events;
-using Sitecore.Publishing;
 using Slack.Contracts;
 using Slack.Models;
 using Slack.Services;
+using Sitecore.Install.Events;
 
 #endregion
 
@@ -40,38 +39,45 @@ namespace Slack.Events
         #region Methods
 
         public void OnPackageInstallStarted(object sender, EventArgs args)
-        {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PackageInstallStartedEventGuid));
-            //if (!channelConfigs.Any())
-            //    return;
+        {            
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPackageInstallStart));
+            if (!publications.Any())
+                return;
 
-            //var package = Event.ExtractParameter(args, 0);
-            //if (package == null) return;
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = "A package install started.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var installationEvent = Sitecore.Events.Event.ExtractParameter(args, 0) as InstallationEventArgs;
+            if (installationEvent == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = "A package install started.";
+                    //TODO: populate the rest of the message
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         public void OnPackageInstallEnded(object sender, EventArgs args)
         {
-            //var channelConfigs =
-            //    _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Events.PackageInstallStartedEventGuid));
-            //if (!channelConfigs.Any())
-            //    return;
-            //var publisher = Event.ExtractParameter(args, 0) as Publisher;
-            //if (publisher == null) return;
-            //foreach (var channelConfig in channelConfigs)
-            //{
-            //    _message.Text = "A package install completed.";
-            //    _message.Channel = channelConfig.ChannelName;
-            //    //TODO: populate the rest of the message
-            //    _service.PublishMessage(_message);
-            //}
+            var publications = _service.GetApplicablePublications(new Guid(Constants.Events.OnPackageInstallEnd));
+            if (!publications.Any())
+                return;
+
+            var installationEvent = Sitecore.Events.Event.ExtractParameter(args, 0) as InstallationEventArgs;
+            if (installationEvent == null) return;
+
+            foreach (var publication in publications)
+            {
+                foreach (var channel in publication.GetChannels())
+                {
+                    _message.Text = "A package install completed.";
+                    //TODO: populate the rest of the message
+                    _message.UpdateChannelInfo(channel, publication);
+                    _service.PublishMessage(_message);
+                }
+            }
         }
 
         #endregion
