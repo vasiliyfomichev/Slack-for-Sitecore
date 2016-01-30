@@ -99,6 +99,7 @@
     <Content Include="App_Config\Include\Slack\Slack.Pipelines.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\TeamAuthenticationTest.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Contracts\ISlackChannelConfig.cs" />
     <Compile Include="Contracts\ISlackMessage.cs" />
