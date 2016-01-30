@@ -44,6 +44,7 @@ namespace Slack.Commands
             _message.Text = "Hello Slack from Sitecore!";
             _message.Token = token;
             _message.Username = username;
+            _message.Channel = "general";
             _service.PublishMessage(_message);
         }
 
