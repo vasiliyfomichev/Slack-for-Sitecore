@@ -70,6 +70,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>..\lib\Sitecore.Analytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Model">
+      <HintPath>..\lib\Sitecore.Analytics.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -129,6 +137,7 @@
     <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
     <Compile Include="Pipelines\MvcException.cs" />
+    <Compile Include="Pipelines\Event.cs" />
     <Compile Include="Pipelines\Shutdown.cs" />
     <Compile Include="Pipelines\Initialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

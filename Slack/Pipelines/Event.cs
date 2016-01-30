@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Sitecore.Mvc.Pipelines.MvcEvents.Exception;
+using Sitecore.Analytics.Pipelines.RegisterPageEvent;
 using Sitecore.Pipelines;
 using Slack.Contracts;
 using Slack.Models;
@@ -10,7 +10,7 @@ using Slack.Services;
 
 namespace Slack.Pipelines
 {
-    public class MvcException
+    public class Event
     {
         #region Fields
 
@@ -21,13 +21,13 @@ namespace Slack.Pipelines
 
         #region Constructors
 
-        public MvcException()
+        public Event()
         {
             _message = new SlackMessage();
             _service = new SlackService();
         }
 
-        public MvcException(ISlackService service, ISlackMessage message)
+        public Event(ISlackService service, ISlackMessage message)
         {
             _message = message;
             _service = service;
@@ -35,18 +35,17 @@ namespace Slack.Pipelines
 
         #endregion
 
-        public void Process(ExceptionArgs args)
+        public void Process(RegisterPageEventArgs args)
         {
             if (args == null) return;
             var channelConfigs =
-                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.ApplicationMvcExceptionEventId));
+                   _service.GetApplicableSlackChannelConfigs(new Guid(Constants.Pipelines.PageEventEventId));
             if (!channelConfigs.Any())
                 return;
-            var message = $"MVC error occured on item {args.PageContext.Item.Paths.Path}. \n" +
-                                $"{args.Message} \n";
+
             foreach (var channelConfig in channelConfigs)
             {
-                _message.Text = message;
+                _message.Text = $"Page event {args.PageEvent.Name} has been triggered.";
                 _message.Channel = channelConfig.ChannelName;
                 //TODO: populate the rest of the message
                 _service.PublishMessage(_message);

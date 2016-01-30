@@ -39,6 +39,7 @@ namespace Slack
             public const string ApplicationInitializationEventId = "";
             public const string ApplicationShutdownEventId = "";
             public const string ApplicationMvcExceptionEventId = "";
+            public const string PageEventEventId = "";
         }
 
         public struct Channel
