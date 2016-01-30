@@ -64,16 +64,22 @@ namespace Slack.Events
             if (!publications.Any())
                 return;
 
-            var membershipUser = Sitecore.Events.Event.ExtractParameter(args, 0) as MembershipUser;
+            var membershipUser = Sitecore.Events.Event.ExtractParameter(args, 0);
             if (membershipUser == null) return;
+            var message = string.Empty;
 
             foreach (var publication in publications)
             {
+                if (!string.IsNullOrEmpty(publication.Message))
+                {
+                    message = publication.Message + "\n";
+                }
                 foreach (var channel in publication.GetChannels())
                 {
-                    _message.Text = PopulateMembershipUserMessage(publication, membershipUser, "was deleted");
-                    _message.Channel = channel.Channel_Name;
+                    _message.Text = $"{message} User {membershipUser} was deleted.";
+                    _message.UpdateChannelInfo(channel, publication);
                     _service.PublishMessage(_message);
+
                 }
             }
         }
@@ -123,7 +129,7 @@ namespace Slack.Events
 
         private static string PopulateMembershipUserMessage(Publication publication, MembershipUser membershipUser, string action)
         {
-            var message = "";
+            var message = string.Empty;
             if (!string.IsNullOrEmpty(publication.Message))
             {
                 message = publication.Message + "\n";
