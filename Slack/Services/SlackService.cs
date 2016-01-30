@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using Slack.Contracts;
 
-namespace Slack.Repositories
+namespace Slack.Services
 {
-    internal class SlackRepository : ISlackRepository
+    internal class SlackService : ISlackService
     {
         public void PublishMessage(ISlackMessage message)
         {

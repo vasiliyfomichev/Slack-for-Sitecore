@@ -4,7 +4,7 @@
     /// Message object to be posted to Slack Web API
     /// https://api.slack.com/methods/chat.postMessage
     /// </summary>
-    internal interface ISlackMessage
+    public interface ISlackMessage
     {
         string Token { get; set; }
         string Channel { get; set; }

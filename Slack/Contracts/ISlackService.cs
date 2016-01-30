@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Slack.Contracts
 {
-    internal interface ISlackRepository
+    public interface ISlackService
     {
         void PublishMessage(ISlackMessage message);
     }
