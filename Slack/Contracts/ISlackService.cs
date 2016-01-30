@@ -9,5 +9,7 @@ namespace Slack.Contracts
     public interface ISlackService
     {
         void PublishMessage(ISlackMessage message);
+
+        IList<ISlackChannelConfig> GetApplicableSlackChannelConfigs(Guid eventId);
     }
 }
