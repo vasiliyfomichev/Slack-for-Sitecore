@@ -1,4 +1,4 @@
-What is Slack module?
+What is Slack for Sitecore?
 ==============================================
 
 Slack Sitecore module allows posting a wide variety of Sitecore events to Slack chat.
@@ -6,7 +6,7 @@ Slack Sitecore module allows posting a wide variety of Sitecore events to Slack 
 ![Slack](https://upload.wikimedia.org/wikipedia/en/7/76/Slack_Icon.png)
 ![Sitecore SignalR Tools](http://www.cmsbestpractices.com/wp-content/uploads/2015/07/sitecore-signalr-tools-logo.png)
 
-How to use Slack module?
+How to use the Slack module?
 -------------------------------------------------
 1. Install the Slack module package.
 2. Create a Channel definition item under /sitecore/system/modules/slack/channels
