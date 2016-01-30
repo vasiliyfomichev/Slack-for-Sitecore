@@ -12,6 +12,7 @@ namespace Slack.Events
         public void OnPublishEnd(object sender, EventArgs args)
         {
             var publisher = Event.ExtractParameter(args, 0) as Publisher;
+
         }
     }
 }
