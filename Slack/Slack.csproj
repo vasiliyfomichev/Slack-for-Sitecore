@@ -136,6 +136,7 @@
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\SlackChannelConfig.cs" />
     <Compile Include="Models\SlackMessage.cs" />
+    <Compile Include="Pipelines\Campaign.cs" />
     <Compile Include="Pipelines\MvcException.cs" />
     <Compile Include="Pipelines\Event.cs" />
     <Compile Include="Pipelines\Shutdown.cs" />
