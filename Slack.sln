@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{3DEE
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Slack.TDS.Master", "Slack.TDS.Master\Slack.TDS.Master.scproj", "{966F38B0-E93E-41B0-A702-C1E707999A2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slack.Tests", "Slack.Tests\Slack.Tests.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{966F38B0-E93E-41B0-A702-C1E707999A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{966F38B0-E93E-41B0-A702-C1E707999A2D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{966F38B0-E93E-41B0-A702-C1E707999A2D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
