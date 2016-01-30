@@ -15,13 +15,6 @@ version: 1
 revision: e0a6ffcb-336d-491e-8c7d-28bb3e098be4
 
 ----field----
-field: {F7EC9E45-42FD-4D18-A259-3B8013CF298B}
-name: Name
-key: name
-content-length: 6
-
-Event1
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created

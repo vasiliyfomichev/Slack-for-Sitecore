@@ -15,13 +15,6 @@ version: 1
 revision: 3b61538c-9300-4df5-adce-cc33c4002f07
 
 ----field----
-field: {F7EC9E45-42FD-4D18-A259-3B8013CF298B}
-name: Name
-key: name
-content-length: 5
-
-$name
-----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
 key: __owner
