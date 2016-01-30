@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {70E25AA5-8508-4535-BECB-15DC9DCE98C3}
+database: master
+path: /sitecore/system/Modules/Slack/Settings/Event Sources/Social Profile Created
+parent: {315AF0BC-3320-46BE-B6BA-9AEC34515C1B}
+name: Social Profile Created
+master: {00000000-0000-0000-0000-000000000000}
+template: {C63F7736-70D1-447C-8142-7D581C664CE1}
+templatekey: Event Type
+
+----version----
+language: en
+version: 1
+revision: ed48f362-7654-40c1-8344-21436e16efba
+
+----field----
+field: {FA66CE6A-17DA-483D-B707-03B2962ACC86}
+name: Name
+key: name
+content-length: 22
+
+Social Profile Created
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160130T052449Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ed48f362-7654-40c1-8344-21436e16efba
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160130T052449Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
