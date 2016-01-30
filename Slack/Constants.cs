@@ -13,10 +13,6 @@
             public const string OnItemCreated = "{43F7F225-8C98-44B1-89BD-29B6EBDF2483}";
             public const string OnItemDeleted = "{C4F71B0F-951C-4E35-AE0E-E7D63FBE4311}";
             public const string OnItemMoved = "{C79152B0-D6D4-4A34-94C0-5C6325F63580}";
-
-            public const string PackageInstallFinishedID = "{D57A5A9F-682F-49E8-997D-F2BA9DBADA54}";
-            public const string PackageInstallStartedID = "{204769B1-59B8-4A7D-BE1A-FB7E94221580}";
-
             public const string PublishFailedEventId = "{6A557224-F0A4-4AF9-9B35-73F3870B1BF0}";
             public const string PublishBeginEventID = "{7ABE0BA7-0583-4B56-8835-9C2656715C00}";
             public const string PublishEndEventID = "{727FB28B-0536-44C3-9210-F04A437FFB58}";
@@ -29,8 +25,8 @@
             public const string OnPublishEnd = "{A3912A05-DCFF-4AA4-AC85-C723B1C44FFE}";
             public const string OnLoggedIn = "{13AF25DC-E30E-4BF2-A18C-28480B40AAA3}";
             public const string OnLoggedOut = "{1FF0B819-4656-4916-97CC-037E235A704E}";
-            public const string PackageInstallStartedEventGuid = "{}";
-            public const string PackageInstallEndedEventGuid = "{}";
+            public const string OnPackageInstallStart = "{D58F4029-FBB7-462D-880F-D4A87439745D}";
+            public const string OnPackageInstallEnd = "{39DEEEA9-0CED-461D-8134-1B5A145E84F6}";
             public const string SocialUserCreatedEventGuid = "{}";
             public const string SocialProfileAttachedEventGuid = "{}";
             public const string SocialUserLoggedInEventGuid = "{}";
