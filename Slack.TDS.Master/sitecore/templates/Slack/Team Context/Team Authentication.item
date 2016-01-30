@@ -9,10 +9,17 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {E269FBB5-3750-427A-9149-7AA950B49301}
 templatekey: Template section
 
+----field----
+field: {56776EDF-261C-4ABC-9FE7-70C618795239}
+name: __Help link
+key: __help link
+content-length: 121
+
+<link text="slack Web API documentation" linktype="external" url="https://api.slack.com/web" anchor="" target="_blank" />
 ----version----
 language: en
 version: 1
-revision: b242e62d-8def-4a1d-83c6-bd57dacad52a
+revision: d6ff317b-142a-442e-967d-8716277ba52c
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b242e62d-8def-4a1d-83c6-bd57dacad52a
+d6ff317b-142a-442e-967d-8716277ba52c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160130T103341Z
+20160130T190749Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
