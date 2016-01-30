@@ -29,7 +29,7 @@ namespace Slack.Services
 
         public IList<Publication> GetApplicablePublications(Guid eventId)
         {
-            var sitecoreContext = new SitecoreContext();
+            var sitecoreContext = new SitecoreService("master");
             var publicationFolder = sitecoreContext.GetItem<Publication_Folder>(Constants.Publication.PublicationsFolder);
             return publicationFolder.Publications.Where(publication => publication.Events.Contains(eventId)).ToList();
         }
