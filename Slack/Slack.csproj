@@ -150,7 +150,6 @@
     <Compile Include="Events\Indexing.cs" />
     <Compile Include="Events\Item.cs" />
     <Compile Include="Events\Social.cs" />
-    <Compile Include="Events\Security.cs" />
     <Compile Include="Events\Publish.cs" />
     <Compile Include="Models\TeamContext.cs" />
     <Compile Include="Models\PublicationFolder.cs" />
@@ -166,6 +165,8 @@
     <Compile Include="Pipelines\Event.cs" />
     <Compile Include="Pipelines\Shutdown.cs" />
     <Compile Include="Pipelines\Initialize.cs" />
+    <Compile Include="Processors\LoggedIn.cs" />
+    <Compile Include="Processors\LogOut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SlackService.cs" />
     <Compile Include="Models\Channel.cs" />
@@ -178,9 +179,11 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Slack\Slack.config" />
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Slack\Slack.Processors.config" />
     <None Include="Properties\PublishProfiles\Vasiliy Local.pubxml" />
     <Content Include="sitecore\shell\Themes\Standard\Slack.zip" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
