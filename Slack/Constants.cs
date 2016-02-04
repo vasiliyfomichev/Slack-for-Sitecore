@@ -80,8 +80,6 @@ namespace Slack
             public const string OnRoleDeleted = "{5BE8F4B1-532A-44BD-BE6E-8EE22031DCFE}";
             public const string OnPublishBegin = "{F089F137-287F-4401-B739-58C6388C8F5C}";
             public const string OnPublishEnd = "{A3912A05-DCFF-4AA4-AC85-C723B1C44FFE}";
-            public const string OnLoggedIn = "{13AF25DC-E30E-4BF2-A18C-28480B40AAA3}";
-            public const string OnLoggedOut = "{1FF0B819-4656-4916-97CC-037E235A704E}";
             public const string OnPackageInstallStart = "{D58F4029-FBB7-462D-880F-D4A87439745D}";
             public const string OnPackageInstallEnd = "{39DEEEA9-0CED-461D-8134-1B5A145E84F6}";
             public const string SocialUserCreatedEventGuid = "{}";
@@ -104,6 +102,15 @@ namespace Slack
             public const string PageTestStarted = "{9984E971-5DB0-4B25-97AA-453C97627CC8}";
             public const string TestStarted = "{EDCFCAEF-E8EA-49F8-A651-7651E7920072}";
             public const string TestStopped = "{7D10E748-160B-4E3E-BD2F-4ECE3F4A1754}";
+        }
+
+        /// <summary>
+        /// Event ids for events triggered by pocessors defined under /sitecore/system/modules/slack/events
+        /// </summary>
+        public struct PocessorEventIds
+        {
+            public const string UserLoggedIn = "{13AF25DC-E30E-4BF2-A18C-28480B40AAA3}";
+            public const string UserLogOut = "{1FF0B819-4656-4916-97CC-037E235A704E}";
         }
 
         #endregion
