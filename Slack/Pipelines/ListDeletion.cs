@@ -49,7 +49,7 @@ namespace Slack.Pipelines
                 {
                     _message.Text = $"List {args.ContactList.Name} has been deleted.";
                     _message.UpdateChannelInfo(channel, publication);
-                    _service.PublishMessage(_message);
+                    _service.PublishMessage(_message, true);
                 }
             }
         }

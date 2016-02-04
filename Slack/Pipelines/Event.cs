@@ -49,7 +49,7 @@ namespace Slack.Pipelines
                 {
                     _message.Text = $"Page event {args.PageEvent.Name} has been triggered.";
                     _message.UpdateChannelInfo(channel, publication);
-                    _service.PublishMessage(_message);
+                    _service.PublishMessage(_message, true);
                 }
             }
         }

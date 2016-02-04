@@ -49,7 +49,7 @@ namespace Slack.Pipelines
                 {
                     _message.Text = $"Content test started for {args.HostItem.Paths.Path}.";
                     _message.UpdateChannelInfo(channel, publication);
-                    _service.PublishMessage(_message);
+                    _service.PublishMessage(_message, true);
                 }
             }
         }

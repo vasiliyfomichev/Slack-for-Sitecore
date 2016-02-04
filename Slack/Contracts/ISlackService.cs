@@ -10,7 +10,7 @@ namespace Slack.Contracts
 {
     public interface ISlackService
     {
-        void PublishMessage(ISlackMessage message);
+        void PublishMessage(ISlackMessage message, bool async = false);
 
         IList<Publication> GetApplicablePublications(Guid eventId);
     }

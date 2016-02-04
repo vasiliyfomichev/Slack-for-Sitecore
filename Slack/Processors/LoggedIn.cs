@@ -35,8 +35,6 @@ namespace Slack.Processors
 
         public void Process(PipelineArgs args)
         {
-            //Sitecore.Events.Event.RaiseEvent("security:loggedIn", args);
-
             if (args == null) return;
             var publications = _service.GetApplicablePublications(new Guid(Constants.PocessorEventIds.UserLoggedIn));
             if (!publications.Any())
@@ -51,7 +49,7 @@ namespace Slack.Processors
                 {
                     _message.Text = PopulateSecurityrMessage(publication, user, "was logged in");
                     _message.UpdateChannelInfo(channel, publication);
-                    _service.PublishMessage(_message);
+                    _service.PublishMessage(_message, true);
                 }
             }
         }
