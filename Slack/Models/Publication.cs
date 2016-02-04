@@ -18,6 +18,7 @@ namespace Slack.Models
         public ID[] Events { get; set; }
         public string Message { get; set; }
         public ID TeamContext { get; set; }
+        public bool Disabled { get; set; }
 
         #endregion
 
@@ -33,6 +34,7 @@ namespace Slack.Models
             Events = ((MultilistField) item.Fields[Constants.Publication.EventsFieldId]).TargetIDs;
             Message = item.Fields[Constants.Publication.MessageFieldId].Value;
             TeamContext = ((LookupField) item.Fields[Constants.Publication.TeamContextFieldId]).TargetID;
+            Disabled = ((CheckboxField) item.Fields[Constants.Publication.DisabledFieldId]).Checked;
         }
 
         #endregion

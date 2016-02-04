@@ -12,7 +12,7 @@ templatekey: Publication
 ----version----
 language: en
 version: 1
-revision: 0e1038d8-69af-48d3-8a70-abc3d48e8205
+revision: 81bd96ea-61b9-4a07-b712-c808f54539a1
 
 ----field----
 field: {AD560039-1BAB-4136-BB25-597E5C706C39}
@@ -50,6 +50,13 @@ content-length: 18
 
 Campaign Triggered
 ----field----
+field: {EBFF3246-DCD8-481A-8425-BFD186D719BC}
+name: Disabled
+key: disabled
+content-length: 1
+
+1
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-0e1038d8-69af-48d3-8a70-abc3d48e8205
+81bd96ea-61b9-4a07-b712-c808f54539a1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160204T193803Z
+20160204T212057Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

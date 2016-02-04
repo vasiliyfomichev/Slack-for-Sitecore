@@ -41,7 +41,7 @@ namespace Slack.Services
             var publicationFolder = new Publication_Folder(item);
             var publications = publicationFolder.GetPublications();
 
-            return publications.Where(publication => publication.Events.Contains(ID.Parse(eventId))).ToList();
+            return publications.Where(publication => publication.Events.Contains(ID.Parse(eventId))).Where(publication => publication.Disabled == false).ToList();
         }
 
         #endregion

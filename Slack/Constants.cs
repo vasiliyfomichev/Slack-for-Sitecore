@@ -37,6 +37,7 @@ namespace Slack
             public static readonly ID EventsFieldId = new ID("dbb566a8-2404-4fea-95d3-3ab7f91b3c49");
             public static readonly ID MessageFieldId = new ID("013a8d98-6aa7-4bd9-80b4-4558ca34d563");
             public static readonly ID TeamContextFieldId = new ID("4ec68282-940e-4996-8e5d-05ceae67f009");
+            public static readonly ID DisabledFieldId = new ID("ebff3246-dcd8-481a-8425-bfd186d719bc");
             public const string TemplateIdString = "e8bd1697-9a84-4d18-91d1-4fc9f8594b6e";
             public const string TemplateNameStatic = "Publication";
         }
