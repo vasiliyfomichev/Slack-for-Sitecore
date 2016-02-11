@@ -45,14 +45,14 @@ namespace Slack.Events
             if (!publications.Any())
                 return;
 
-            var login = Sitecore.Events.Event.ExtractParameter(args, 0);
-            if (login == null) return;
+            string index = (string)Sitecore.Events.Event.ExtractParameter(args, 0);
+            if (string.IsNullOrEmpty(index)) return;
 
             foreach (var publication in publications)
             {
                 foreach (var channel in publication.GetChannels())
                 {
-                    _message.Text = "Indexing Start";
+                    _message.Text = PopulateIndexingMessage(publication, index, "was started");
                     _message.UpdateChannelInfo(channel, publication);
                     _service.PublishMessage(_message);
                 }
@@ -61,22 +61,35 @@ namespace Slack.Events
 
         public void OnIndexingEnd(object sender, EventArgs args)
         {
-            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.IndexingEnd));
+            var publications = _service.GetApplicablePublications(new Guid(Constants.EventIds.OnIndexingEnd));
             if (!publications.Any())
                 return;
 
-            var login = Sitecore.Events.Event.ExtractParameter(args, 0);
-            if (login == null) return;
+            string index = (string)Sitecore.Events.Event.ExtractParameter(args, 0);
+            if (string.IsNullOrEmpty(index)) return;
 
             foreach (var publication in publications)
             {
                 foreach (var channel in publication.GetChannels())
                 {
-                    _message.Text = "Indexing Finished";
+                    _message.Text = PopulateIndexingMessage(publication, index, "was finished");
                     _message.UpdateChannelInfo(channel, publication);
                     _service.PublishMessage(_message);
                 }
             }
+        }
+
+        private static string PopulateIndexingMessage(Publication publication, string index, string action)
+        {
+            var message = string.Empty;
+            if (!string.IsNullOrEmpty(publication.Message))
+            {
+                message = publication.Message + "\n";
+            }
+            message +=
+                $"{index} reindex {action}\n";
+            return message;
+
         }
 
         #endregion

@@ -66,8 +66,8 @@ namespace Slack
         /// </summary>
         public struct EventIds
         {
-            public const string IndexingEnd = "{B96C1386-7A3F-4CBE-A710-6E3006380809}";
-            public const string OnIndexingStart = "{9C110525-9753-419C-99EC-D201AD6C5AD1}";
+            public const string OnIndexingEnd = "{EDAD9A01-8DAC-4268-B3FE-D772F829D9AC}";
+            public const string OnIndexingStart = "{D4FF8DC3-B514-4F00-A09E-D561836A374C}";
             public const string EventsFolder = "{89B26A3C-1C1A-47C4-895F-534DB019BE5F}";
             public const string OnItemCreated = "{43F7F225-8C98-44B1-89BD-29B6EBDF2483}";
             public const string OnItemDeleted = "{C4F71B0F-951C-4E35-AE0E-E7D63FBE4311}";
