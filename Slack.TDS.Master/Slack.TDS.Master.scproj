@@ -36,7 +36,7 @@
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
     <SitecoreWebUrl>http://habitat.local/</SitecoreWebUrl>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
-    <DisableFileDeployment>False</DisableFileDeployment>
+    <DisableFileDeployment>True</DisableFileDeployment>
     <SitecoreDeployFolder>C:\websites\habitat.local\Website</SitecoreDeployFolder>
     <SitecoreAccessGuid>aa3507e3-8c2c-497d-a3f7-de148373dac1</SitecoreAccessGuid>
     <EnableValidations>False</EnableValidations>

@@ -6,12 +6,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cdc2759f-6337-4b8e-8e4e-fa209a5c7895</ProjectGuid>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <SourceWebPhysicalPath>
-    </SourceWebPhysicalPath>
-    <SourceWebProject>
-    </SourceWebProject>
-    <SourceWebVirtualPath>
-    </SourceWebVirtualPath>
+    <SourceWebPhysicalPath>..\Slack</SourceWebPhysicalPath>
+    <SourceWebProject>{416a4f79-4aff-4790-b542-c4cb300ebacd}|Slack\Slack.csproj</SourceWebProject>
+    <SourceWebVirtualPath>/Slack.csproj</SourceWebVirtualPath>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
@@ -33,7 +30,7 @@
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
     <SitecoreWebUrl>http://habitat.local/</SitecoreWebUrl>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
-    <DisableFileDeployment>False</DisableFileDeployment>
+    <DisableFileDeployment>True</DisableFileDeployment>
     <SitecoreDeployFolder>C:\websites\habitat.local\Website</SitecoreDeployFolder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -90,6 +87,12 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Slack\Slack.csproj">
+      <Project>{416a4f79-4aff-4790-b542-c4cb300ebacd}</Project>
+      <Name>Slack</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>

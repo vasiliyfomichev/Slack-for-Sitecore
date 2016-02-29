@@ -168,7 +168,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 #Node Modules
-/OSU.Cancer.www/OSU.Cancer.www.Website/App/node_modules
+node_modules
 
 #Sublime settings
 thejames.sublime-workspace
